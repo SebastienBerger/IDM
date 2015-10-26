@@ -19,14 +19,10 @@ public class InternalSMLexer extends Lexer {
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__55=55;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int T__51=51;
-    public static final int T__52=52;
-    public static final int T__53=53;
-    public static final int T__54=54;
     public static final int RULE_ID=5;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -481,10 +477,11 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:30:7: ( ',' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:30:9: ','
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:30:7: ( 'init with' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:30:9: 'init with'
             {
-            match(','); 
+            match("init with"); 
+
 
             }
 
@@ -501,11 +498,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:31:7: ( 'var' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:31:9: 'var'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:31:7: ( ',' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:31:9: ','
             {
-            match("var"); 
-
+            match(','); 
 
             }
 
@@ -522,10 +518,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:32:7: ( 'Operation' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:32:9: 'Operation'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:32:7: ( 'var' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:32:9: 'var'
             {
-            match("Operation"); 
+            match("var"); 
 
 
             }
@@ -543,11 +539,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:33:7: ( 'contents' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:33:9: 'contents'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:33:7: ( ';' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:33:9: ';'
             {
-            match("contents"); 
-
+            match(';'); 
 
             }
 
@@ -564,10 +559,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:34:7: ( 'State' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:34:9: 'State'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:34:7: ( 'state' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:34:9: 'state'
             {
-            match("State"); 
+            match("state"); 
 
 
             }
@@ -585,10 +580,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:35:7: ( 'operation' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:35:9: 'operation'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:35:7: ( 'do' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:35:9: 'do'
             {
-            match("operation"); 
+            match("do"); 
 
 
             }
@@ -606,10 +601,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:36:7: ( 'InitialState' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:36:9: 'InitialState'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:36:7: ( 'from' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:36:9: 'from'
             {
-            match("InitialState"); 
+            match("from"); 
 
 
             }
@@ -627,10 +622,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:37:7: ( 'referencedState' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:37:9: 'referencedState'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:37:7: ( 'to' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:37:9: 'to'
             {
-            match("referencedState"); 
+            match("to"); 
 
 
             }
@@ -648,10 +643,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:38:7: ( 'Assignment' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:38:9: 'Assignment'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:38:7: ( 'for' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:38:9: 'for'
             {
-            match("Assignment"); 
+            match("for"); 
 
 
             }
@@ -669,10 +664,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:39:7: ( 'variable' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:39:9: 'variable'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:39:7: ( 'guard' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:39:9: 'guard'
             {
-            match("variable"); 
+            match("guard"); 
 
 
             }
@@ -690,10 +685,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:40:7: ( 'expression' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:40:9: 'expression'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:40:7: ( ':=' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:40:9: ':='
             {
-            match("expression"); 
+            match(":="); 
 
 
             }
@@ -711,10 +706,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:41:7: ( '_name' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:41:9: '_name'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:41:7: ( 'Expression' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:41:9: 'Expression'
             {
-            match("_name"); 
+            match("Expression"); 
 
 
             }
@@ -732,10 +727,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:42:7: ( 'Expression' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:42:9: 'Expression'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:42:7: ( 'operator' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:42:9: 'operator'
             {
-            match("Expression"); 
+            match("operator"); 
 
 
             }
@@ -753,10 +748,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:43:7: ( 'operator' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:43:9: 'operator'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:43:7: ( 'left' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:43:9: 'left'
             {
-            match("operator"); 
+            match("left"); 
 
 
             }
@@ -774,10 +769,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:44:7: ( 'left' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:44:9: 'left'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:44:7: ( 'right' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:44:9: 'right'
             {
-            match("left"); 
+            match("right"); 
 
 
             }
@@ -795,10 +790,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:45:7: ( 'right' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:45:9: 'right'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:45:7: ( '_name' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:45:9: '_name'
             {
-            match("right"); 
+            match("_name"); 
 
 
             }
@@ -837,10 +832,11 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:47:7: ( '-' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:47:9: '-'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:47:7: ( 'variable' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:47:9: 'variable'
             {
-            match('-'); 
+            match("variable"); 
+
 
             }
 
@@ -857,11 +853,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:48:7: ( 'CompositeState' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:48:9: 'CompositeState'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:48:7: ( '-' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:48:9: '-'
             {
-            match("CompositeState"); 
-
+            match('-'); 
 
             }
 
@@ -878,11 +873,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:49:7: ( 'states' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:49:9: 'states'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:49:7: ( ':' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:49:9: ':'
             {
-            match("states"); 
-
+            match(':'); 
 
             }
 
@@ -899,10 +893,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:50:7: ( 'initialState' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:50:9: 'initialState'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:50:7: ( 'boolean' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:50:9: 'boolean'
             {
-            match("initialState"); 
+            match("boolean"); 
 
 
             }
@@ -920,70 +914,8 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:51:7: ( ':' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:51:9: ':'
-            {
-            match(':'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__51"
-
-    // $ANTLR start "T__52"
-    public final void mT__52() throws RecognitionException {
-        try {
-            int _type = T__52;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:52:7: ( 'boolean' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:52:9: 'boolean'
-            {
-            match("boolean"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__52"
-
-    // $ANTLR start "T__53"
-    public final void mT__53() throws RecognitionException {
-        try {
-            int _type = T__53;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:53:7: ( ':=' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:53:9: ':='
-            {
-            match(":="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__53"
-
-    // $ANTLR start "T__54"
-    public final void mT__54() throws RecognitionException {
-        try {
-            int _type = T__54;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:54:7: ( 'integer' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:54:9: 'integer'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:51:7: ( 'integer' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:51:9: 'integer'
             {
             match("integer"); 
 
@@ -996,38 +928,17 @@ public class InternalSMLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__54"
-
-    // $ANTLR start "T__55"
-    public final void mT__55() throws RecognitionException {
-        try {
-            int _type = T__55;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:55:7: ( 'isActive' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:55:9: 'isActive'
-            {
-            match("isActive"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__55"
+    // $ANTLR end "T__51"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4743:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4743:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4407:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4407:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4743:11: ( '^' )?
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4407:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1036,7 +947,7 @@ public class InternalSMLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4743:11: '^'
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4407:11: '^'
                     {
                     match('^'); 
 
@@ -1054,7 +965,7 @@ public class InternalSMLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4743:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4407:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1103,10 +1014,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4745:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4745:12: ( '0' .. '9' )+
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4409:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4409:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4745:12: ( '0' .. '9' )+
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4409:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1120,7 +1031,7 @@ public class InternalSMLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4745:13: '0' .. '9'
+            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4409:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1152,10 +1063,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1173,10 +1084,10 @@ public class InternalSMLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1192,7 +1103,7 @@ public class InternalSMLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:21: '\\\\' .
+                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1200,7 +1111,7 @@ public class InternalSMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1225,10 +1136,10 @@ public class InternalSMLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1244,7 +1155,7 @@ public class InternalSMLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:54: '\\\\' .
+                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1252,7 +1163,7 @@ public class InternalSMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4747:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4411:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1295,12 +1206,12 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4749:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4749:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4413:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4413:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4749:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4413:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1325,7 +1236,7 @@ public class InternalSMLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4749:52: .
+            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4413:52: .
             	    {
             	    matchAny(); 
 
@@ -1355,12 +1266,12 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1373,7 +1284,7 @@ public class InternalSMLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1393,7 +1304,7 @@ public class InternalSMLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1402,9 +1313,9 @@ public class InternalSMLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:41: ( '\\r' )?
+                    // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1413,7 +1324,7 @@ public class InternalSMLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4751:41: '\\r'
+                            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4415:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1445,10 +1356,10 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4753:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4753:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4417:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4753:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1502,8 +1413,8 @@ public class InternalSMLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4755:16: ( . )
-            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4755:18: .
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4419:16: ( . )
+            // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:4419:18: .
             {
             matchAny(); 
 
@@ -1518,8 +1429,8 @@ public class InternalSMLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=52;
+        // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=48;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1810,77 +1721,49 @@ public class InternalSMLexer extends Lexer {
                 }
                 break;
             case 42 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:256: T__52
-                {
-                mT__52(); 
-
-                }
-                break;
-            case 43 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:262: T__53
-                {
-                mT__53(); 
-
-                }
-                break;
-            case 44 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:268: T__54
-                {
-                mT__54(); 
-
-                }
-                break;
-            case 45 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:274: T__55
-                {
-                mT__55(); 
-
-                }
-                break;
-            case 46 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:280: RULE_ID
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:256: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 47 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:288: RULE_INT
+            case 43 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:264: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 48 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:297: RULE_STRING
+            case 44 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:273: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 49 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:309: RULE_ML_COMMENT
+            case 45 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:285: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 50 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:325: RULE_SL_COMMENT
+            case 46 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:301: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 51 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:341: RULE_WS
+            case 47 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:317: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 52 :
-                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:349: RULE_ANY_OTHER
+            case 48 :
+                // ../org.xtext.StateMachine.sm.ui/src-gen/org/xtext/StateMachine/sm/ui/contentassist/antlr/internal/InternalSM.g:1:325: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1894,307 +1777,220 @@ public class InternalSMLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\14\47\3\uffff\11\47\1\uffff\2\47\1\114\1\47\1\45\2\uffff\3\45\2\uffff\1\47\1\uffff\5\47\1\131\3\47\1\136\1\140\4\47\1\145\2\47\3\uffff\12\47\1\uffff\3\47\2\uffff\1\47\5\uffff\2\47\1\171\1\172\1\173\1\47\1\uffff\2\47\1\177\1\u0080\1\uffff\1\u0081\1\uffff\1\47\1\u0083\1\u0084\1\u0085\1\uffff\2\47\1\u0089\16\47\1\u0098\1\47\3\uffff\3\47\3\uffff\1\u009d\3\uffff\3\47\1\uffff\16\47\1\uffff\1\u00af\3\47\1\uffff\1\47\1\u00b5\5\47\1\u00bb\1\47\1\u00bd\7\47\1\uffff\1\u00c5\1\u00c6\3\47\1\uffff\5\47\1\uffff\1\47\1\uffff\7\47\2\uffff\16\47\1\u00e6\1\47\1\u00e8\2\47\1\u00eb\1\47\1\u00ed\1\47\1\u00ef\7\47\1\uffff\1\u00f7\1\uffff\1\47\1\u00f9\1\uffff\1\47\1\uffff\1\u00fb\1\uffff\7\47\1\uffff\1\u0103\1\uffff\1\47\1\uffff\2\47\1\u0107\1\u0108\3\47\1\uffff\3\47\2\uffff\3\47\1\u0112\1\u0113\3\47\1\u0117\2\uffff\3\47\1\uffff\2\47\1\u011d\1\u011e\1\47\2\uffff\1\47\1\u0121\1\uffff";
+        "\1\uffff\14\44\2\uffff\1\44\1\uffff\1\44\1\uffff\1\101\4\44\1\uffff\1\44\1\41\2\uffff\3\41\2\uffff\1\44\1\116\1\uffff\7\44\1\126\2\44\1\132\1\44\1\135\2\44\1\140\2\44\1\143\2\44\2\uffff\1\44\1\uffff\1\44\3\uffff\4\44\1\uffff\1\44\5\uffff\1\44\1\uffff\2\44\1\161\1\162\1\163\1\164\1\44\1\uffff\1\44\1\167\1\170\1\uffff\1\44\1\172\1\uffff\1\44\1\174\1\uffff\1\175\1\176\1\uffff\4\44\1\u0084\5\44\1\u008a\1\44\1\u008c\4\uffff\2\44\2\uffff\1\44\1\uffff\1\u0090\3\uffff\5\44\1\uffff\5\44\1\uffff\1\u009b\1\uffff\1\u009c\1\44\1\u009e\1\uffff\2\44\1\uffff\3\44\1\u00a4\1\u00a5\2\44\2\uffff\1\u00a8\1\uffff\5\44\2\uffff\2\44\1\uffff\2\44\1\u00b2\3\44\1\u00b6\1\u00b7\1\44\1\uffff\1\u00b9\2\44\2\uffff\1\44\1\uffff\3\44\1\u00c0\2\44\1\uffff\1\44\1\u00c4\1\44\1\uffff\4\44\1\u00ca\1\uffff";
     static final String DFA12_eofS =
-        "\u0122\uffff";
+        "\u00cb\uffff";
     static final String DFA12_minS =
-        "\1\0\1\162\1\141\1\144\1\164\1\161\1\165\1\164\1\145\1\151\1\145\1\160\1\164\3\uffff\1\141\1\160\1\157\1\156\1\145\1\163\1\156\1\170\1\141\1\uffff\1\157\1\156\1\75\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1\uffff\1\154\2\144\1\142\1\141\1\60\1\145\1\160\1\154\2\60\1\146\1\166\1\161\1\164\1\60\1\145\1\141\3\uffff\1\162\1\145\1\156\1\151\1\146\1\147\1\163\1\141\1\160\1\162\1\uffff\1\155\1\151\1\101\2\uffff\1\157\5\uffff\1\145\1\163\3\60\1\164\1\uffff\1\156\1\162\2\60\1\uffff\1\60\1\uffff\1\164\3\60\1\uffff\1\162\1\164\1\60\1\162\2\164\1\145\1\150\1\151\1\155\1\162\1\151\1\160\1\164\1\145\1\143\1\154\1\60\1\145\3\uffff\1\145\1\164\1\145\3\uffff\1\60\3\uffff\1\141\1\145\1\141\1\uffff\1\141\1\145\1\151\1\162\1\164\1\147\2\145\1\141\1\157\1\151\1\147\1\164\1\145\1\uffff\1\60\3\163\1\uffff\1\164\1\60\1\142\1\164\1\156\1\141\1\145\1\60\1\156\1\60\1\163\1\142\1\163\1\141\1\145\1\151\1\141\1\uffff\2\60\1\163\1\151\1\141\1\uffff\1\154\1\151\1\164\1\154\1\156\1\uffff\1\155\1\uffff\1\163\1\154\1\151\1\154\1\162\1\166\1\156\2\uffff\1\151\1\157\1\162\1\143\1\145\1\157\1\163\1\123\1\143\1\145\1\151\1\145\1\164\1\123\1\60\1\145\1\60\1\157\1\156\1\60\1\150\1\60\1\156\1\60\1\164\1\145\1\156\1\157\1\122\1\145\1\164\1\uffff\1\60\1\uffff\1\156\1\60\1\uffff\1\151\1\uffff\1\60\1\uffff\1\141\1\144\1\164\1\156\1\145\1\123\1\141\1\uffff\1\60\1\uffff\1\156\1\uffff\1\164\1\123\2\60\1\146\2\164\1\uffff\2\145\1\164\2\uffff\1\145\1\141\1\145\2\60\1\141\1\162\1\164\1\60\2\uffff\1\164\2\145\1\uffff\1\145\1\156\2\60\1\143\2\uffff\1\145\1\60\1\uffff";
+        "\1\0\1\157\1\141\1\144\1\164\1\161\1\165\1\164\1\145\1\151\1\145\1\160\1\164\2\uffff\1\156\1\uffff\1\141\1\uffff\1\75\1\170\1\151\1\156\1\141\1\uffff\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1\60\1\uffff\1\154\1\157\1\162\2\144\1\142\1\141\1\60\1\145\1\154\1\60\1\141\1\60\1\146\1\166\1\60\1\161\1\164\1\60\1\145\1\141\2\uffff\1\151\1\uffff\1\162\3\uffff\1\160\1\147\1\141\1\162\1\uffff\1\157\5\uffff\1\145\1\uffff\1\163\1\155\4\60\1\164\1\uffff\1\156\2\60\1\uffff\1\162\1\60\1\uffff\1\164\1\60\1\uffff\2\60\1\uffff\1\162\2\164\1\145\1\60\1\162\1\150\1\155\1\151\1\154\1\60\1\145\1\60\4\uffff\1\145\1\164\2\uffff\1\144\1\uffff\1\60\3\uffff\1\141\1\145\1\40\1\147\1\141\1\uffff\1\145\1\164\1\145\1\141\1\145\1\uffff\1\60\1\uffff\1\60\1\163\1\60\1\uffff\1\164\1\115\1\uffff\1\145\1\142\1\163\2\60\1\142\1\141\2\uffff\1\60\1\uffff\1\157\1\141\1\162\1\154\1\163\2\uffff\1\154\1\156\1\uffff\1\162\1\143\1\60\1\145\1\151\1\145\2\60\1\150\1\uffff\1\60\1\157\1\122\2\uffff\1\151\1\uffff\1\156\1\145\1\156\1\60\1\146\1\145\1\uffff\1\145\1\60\1\162\1\uffff\1\145\1\156\1\143\1\145\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\141\1\156\1\165\1\170\1\165\2\164\1\151\1\157\1\162\1\164\3\uffff\1\141\1\160\1\157\1\156\1\151\1\163\1\156\1\170\1\141\1\uffff\1\157\1\163\1\75\1\157\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\uffff\1\154\2\144\1\142\1\141\1\172\1\145\1\160\1\154\2\172\1\146\1\166\1\161\1\164\1\172\1\145\1\141\3\uffff\1\162\1\145\1\156\1\151\1\146\1\147\1\163\1\141\1\160\1\162\1\uffff\1\155\1\164\1\101\2\uffff\1\157\5\uffff\1\145\1\163\3\172\1\164\1\uffff\1\156\1\162\2\172\1\uffff\1\172\1\uffff\1\164\3\172\1\uffff\1\162\1\164\1\172\1\162\2\164\1\145\1\150\1\151\1\155\1\162\1\151\1\160\1\164\1\145\1\143\1\154\1\172\1\145\3\uffff\1\145\1\164\1\145\3\uffff\1\172\3\uffff\1\141\1\145\1\141\1\uffff\1\141\1\145\1\151\1\162\1\164\1\147\2\145\1\141\1\157\1\151\1\147\1\164\1\145\1\uffff\1\172\3\163\1\uffff\1\164\1\172\1\142\1\164\1\156\1\141\1\145\1\172\1\156\1\172\1\163\1\142\1\163\1\141\1\145\1\151\1\141\1\uffff\2\172\1\163\1\157\1\141\1\uffff\1\154\1\151\1\164\1\154\1\156\1\uffff\1\155\1\uffff\1\163\1\154\1\151\1\154\1\162\1\166\1\156\2\uffff\1\151\1\157\1\162\1\143\1\145\1\157\1\163\1\123\1\143\1\145\1\151\1\145\1\164\1\123\1\172\1\145\1\172\1\157\1\156\1\172\1\150\1\172\1\156\1\172\1\164\1\145\1\156\1\157\1\122\1\145\1\164\1\uffff\1\172\1\uffff\1\156\1\172\1\uffff\1\151\1\uffff\1\172\1\uffff\1\141\1\144\1\164\1\156\1\145\1\123\1\141\1\uffff\1\172\1\uffff\1\156\1\uffff\1\164\1\123\2\172\1\146\2\164\1\uffff\2\145\1\164\2\uffff\1\145\1\141\1\145\2\172\1\141\1\162\1\164\1\172\2\uffff\1\164\2\145\1\uffff\1\145\1\156\2\172\1\143\2\uffff\1\145\1\172\1\uffff";
+        "\1\uffff\2\162\1\156\1\165\1\166\2\165\1\164\2\157\1\162\1\164\2\uffff\1\156\1\uffff\1\141\1\uffff\1\75\1\170\1\151\1\156\1\141\1\uffff\1\157\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\172\1\uffff\1\154\1\157\1\162\2\144\1\142\1\141\1\172\1\145\1\154\1\172\1\141\1\172\1\146\1\166\1\172\1\161\1\164\1\172\1\145\1\141\2\uffff\1\164\1\uffff\1\162\3\uffff\1\160\1\147\1\141\1\162\1\uffff\1\157\5\uffff\1\145\1\uffff\1\163\1\155\4\172\1\164\1\uffff\1\156\2\172\1\uffff\1\162\1\172\1\uffff\1\164\1\172\1\uffff\2\172\1\uffff\1\162\2\164\1\145\1\172\1\162\1\150\1\155\1\151\1\154\1\172\1\145\1\172\4\uffff\1\145\1\164\2\uffff\1\144\1\uffff\1\172\3\uffff\1\141\1\145\1\40\1\147\1\141\1\uffff\1\145\1\164\1\145\1\141\1\145\1\uffff\1\172\1\uffff\1\172\1\163\1\172\1\uffff\1\164\1\115\1\uffff\1\145\1\142\1\163\2\172\1\142\1\141\2\uffff\1\172\1\uffff\1\157\1\141\1\162\1\154\1\163\2\uffff\1\154\1\156\1\uffff\1\162\1\143\1\172\1\145\1\151\1\145\2\172\1\150\1\uffff\1\172\1\157\1\122\2\uffff\1\151\1\uffff\1\156\1\145\1\156\1\172\1\146\1\145\1\uffff\1\145\1\172\1\162\1\uffff\1\145\1\156\1\143\1\145\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\15\uffff\1\21\1\23\1\24\11\uffff\1\45\5\uffff\1\56\1\57\3\uffff\1\63\1\64\1\uffff\1\56\22\uffff\1\21\1\23\1\24\12\uffff\1\45\3\uffff\1\53\1\51\1\uffff\1\57\1\60\1\61\1\62\1\63\6\uffff\1\5\4\uffff\1\7\1\uffff\1\10\4\uffff\1\16\23\uffff\1\3\1\14\1\4\3\uffff\1\6\1\12\1\11\1\uffff\1\13\1\15\1\17\3\uffff\1\25\16\uffff\1\1\4\uffff\1\42\21\uffff\1\2\5\uffff\1\30\5\uffff\1\43\1\uffff\1\37\7\uffff\1\47\1\22\37\uffff\1\54\1\uffff\1\52\2\uffff\1\41\1\uffff\1\35\1\uffff\1\27\7\uffff\1\55\1\uffff\1\31\1\uffff\1\26\7\uffff\1\36\3\uffff\1\34\1\40\11\uffff\1\20\1\32\3\uffff\1\50\5\uffff\1\46\1\33\2\uffff\1\44";
+        "\15\uffff\1\21\1\23\1\uffff\1\25\1\uffff\1\27\5\uffff\1\46\2\uffff\1\52\1\53\3\uffff\1\57\1\60\2\uffff\1\52\25\uffff\1\21\1\23\1\uffff\1\25\1\uffff\1\27\1\36\1\47\4\uffff\1\46\1\uffff\1\53\1\54\1\55\1\56\1\57\1\uffff\1\33\7\uffff\1\5\3\uffff\1\7\2\uffff\1\10\2\uffff\1\31\2\uffff\1\16\15\uffff\1\34\1\3\1\14\1\4\2\uffff\1\6\1\12\1\uffff\1\11\1\uffff\1\13\1\15\1\17\5\uffff\1\26\5\uffff\1\1\1\uffff\1\32\3\uffff\1\41\2\uffff\1\24\7\uffff\1\2\1\30\1\uffff\1\35\5\uffff\1\42\1\43\2\uffff\1\22\11\uffff\1\51\3\uffff\1\50\1\40\1\uffff\1\45\6\uffff\1\37\3\uffff\1\20\5\uffff\1\44";
     static final String DFA12_specialS =
-        "\1\2\40\uffff\1\0\1\1\u00ff\uffff}>";
+        "\1\0\34\uffff\1\1\1\2\u00ac\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\45\2\44\2\45\1\44\22\45\1\44\1\45\1\41\4\45\1\42\4\45\1\17\1\31\1\45\1\43\12\40\1\34\6\45\1\25\1\37\1\32\1\37\1\27\3\37\1\23\5\37\1\21\3\37\1\14\2\37\1\30\4\37\3\45\1\36\1\26\1\45\1\3\1\35\1\22\1\11\1\5\1\2\1\7\1\37\1\33\2\37\1\10\1\6\1\12\1\13\2\37\1\24\1\4\1\1\1\37\1\20\4\37\1\15\1\45\1\16\uff82\45",
-            "\1\46",
-            "\1\50",
-            "\1\51\11\uffff\1\52",
-            "\1\54\1\53",
-            "\1\55\4\uffff\1\56\1\uffff\1\57",
-            "\1\60",
-            "\1\61",
-            "\1\63\16\uffff\1\62",
-            "\1\64",
+            "\11\41\2\40\2\41\1\40\22\41\1\40\1\41\1\35\4\41\1\36\4\41\1\20\1\30\1\41\1\37\12\34\1\23\1\22\5\41\4\33\1\24\15\33\1\14\2\33\1\27\4\33\3\41\1\32\1\26\1\41\1\3\1\31\1\33\1\11\1\5\1\2\1\7\1\33\1\17\2\33\1\10\1\6\1\12\1\13\2\33\1\25\1\4\1\1\1\33\1\21\4\33\1\15\1\41\1\16\uff82\41",
+            "\1\43\2\uffff\1\42",
+            "\1\45\15\uffff\1\47\2\uffff\1\46",
+            "\1\50\11\uffff\1\51",
+            "\1\53\1\52",
+            "\1\54\4\uffff\1\55",
+            "\1\56",
+            "\1\57\1\60",
+            "\1\62\16\uffff\1\61",
+            "\1\63\5\uffff\1\64",
             "\1\65\11\uffff\1\66",
             "\1\70\1\uffff\1\67",
             "\1\71",
             "",
             "",
+            "\1\74",
             "",
-            "\1\75",
             "\1\76",
-            "\1\77",
+            "",
             "\1\100",
-            "\1\101\3\uffff\1\102",
+            "\1\102",
             "\1\103",
             "\1\104",
             "\1\105",
-            "\1\106",
             "",
-            "\1\110",
-            "\1\111\4\uffff\1\112",
-            "\1\113",
+            "\1\107",
+            "\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "",
+            "\0\111",
+            "\0\111",
+            "\1\112\4\uffff\1\113",
+            "",
+            "",
             "\1\115",
-            "\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
-            "",
-            "\0\117",
-            "\0\117",
-            "\1\120\4\uffff\1\121",
-            "",
-            "",
+            "\1\117",
+            "\1\120",
+            "\1\121",
+            "\1\122",
             "\1\123",
-            "",
             "\1\124",
             "\1\125",
-            "\1\126",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\127",
             "\1\130",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\132",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\4\44\1\131\25\44",
             "\1\133",
-            "\1\134",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\4\47\1\135\25\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\4\47\1\137\25\47",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\4\44\1\134\25\44",
+            "\1\136",
+            "\1\137",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\141",
             "\1\142",
-            "\1\143",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\144",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\146",
-            "\1\147",
+            "\1\145",
             "",
             "",
+            "\1\146\12\uffff\1\147",
             "",
             "\1\150",
+            "",
+            "",
+            "",
             "\1\151",
             "\1\152",
             "\1\153",
             "\1\154",
+            "",
             "\1\155",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\156",
+            "",
             "\1\157",
             "\1\160",
-            "\1\161",
-            "",
-            "\1\162",
-            "\1\163\12\uffff\1\164",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\165",
             "",
-            "",
             "\1\166",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\1\171",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\1\173",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
-            "",
-            "\1\167",
-            "\1\170",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\174",
-            "",
-            "\1\175",
-            "\1\176",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
+            "\1\177",
+            "\1\u0080",
+            "\1\u0081",
             "\1\u0082",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\10\44\1\u0083\21\44",
+            "\1\u0085",
             "\1\u0086",
             "\1\u0087",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\10\47\1\u0088\21\47",
-            "\1\u008a",
+            "\1\u0088",
+            "\1\u0089",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u008b",
-            "\1\u008c",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "",
+            "",
+            "",
             "\1\u008d",
             "\1\u008e",
+            "",
+            "",
             "\1\u008f",
-            "\1\u0090",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "",
+            "",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
             "\1\u0095",
+            "",
             "\1\u0096",
             "\1\u0097",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0098",
             "\1\u0099",
-            "",
-            "",
-            "",
             "\1\u009a",
-            "\1\u009b",
-            "\1\u009c",
             "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u009d",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "",
-            "",
-            "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
             "",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
-            "\1\u00a4",
-            "\1\u00a5",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00a6",
             "\1\u00a7",
-            "\1\u00a8",
+            "",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
             "\1\u00a9",
             "\1\u00aa",
             "\1\u00ab",
             "\1\u00ac",
             "\1\u00ad",
-            "\1\u00ae",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u00ae",
+            "\1\u00af",
+            "",
             "\1\u00b0",
             "\1\u00b1",
-            "\1\u00b2",
-            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00b3",
-            "\12\47\7\uffff\14\47\1\u00b4\15\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00b6",
-            "\1\u00b7",
+            "\1\u00b4",
+            "\1\u00b5",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00b8",
-            "\1\u00b9",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00ba",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00bb",
+            "",
+            "",
             "\1\u00bc",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u00bd",
             "\1\u00be",
             "\1\u00bf",
-            "\1\u00c0",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00c1",
             "\1\u00c2",
+            "",
             "\1\u00c3",
-            "\1\u00c4",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00c5",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00c6",
             "\1\u00c7",
-            "\1\u00c8\5\uffff\1\u00c9",
-            "\1\u00ca",
-            "",
-            "\1\u00cb",
-            "\1\u00cc",
-            "\1\u00cd",
-            "\1\u00ce",
-            "\1\u00cf",
-            "",
-            "\1\u00d0",
-            "",
-            "\1\u00d1",
-            "\1\u00d2",
-            "\1\u00d3",
-            "\1\u00d4",
-            "\1\u00d5",
-            "\1\u00d6",
-            "\1\u00d7",
-            "",
-            "",
-            "\1\u00d8",
-            "\1\u00d9",
-            "\1\u00da",
-            "\1\u00db",
-            "\1\u00dc",
-            "\1\u00dd",
-            "\1\u00de",
-            "\1\u00df",
-            "\1\u00e0",
-            "\1\u00e1",
-            "\1\u00e2",
-            "\1\u00e3",
-            "\1\u00e4",
-            "\1\u00e5",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00e7",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00e9",
-            "\1\u00ea",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00ec",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00ee",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u00f0",
-            "\1\u00f1",
-            "\1\u00f2",
-            "\1\u00f3",
-            "\1\u00f4",
-            "\1\u00f5",
-            "\1\u00f6",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\u00f8",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\u00fa",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\u00fc",
-            "\1\u00fd",
-            "\1\u00fe",
-            "\1\u00ff",
-            "\1\u0100",
-            "\1\u0101",
-            "\1\u0102",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\u0104",
-            "",
-            "\1\u0105",
-            "\1\u0106",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0109",
-            "\1\u010a",
-            "\1\u010b",
-            "",
-            "\1\u010c",
-            "\1\u010d",
-            "\1\u010e",
-            "",
-            "",
-            "\1\u010f",
-            "\1\u0110",
-            "\1\u0111",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0114",
-            "\1\u0115",
-            "\1\u0116",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "",
-            "\1\u0118",
-            "\1\u0119",
-            "\1\u011a",
-            "",
-            "\1\u011b",
-            "\1\u011c",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u011f",
-            "",
-            "",
-            "\1\u0120",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00c8",
+            "\1\u00c9",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             ""
     };
 
@@ -2228,33 +2024,13 @@ public class InternalSMLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_33 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_33>='\u0000' && LA12_33<='\uFFFF')) ) {s = 79;}
-
-                        else s = 37;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_34 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_34>='\u0000' && LA12_34<='\uFFFF')) ) {s = 79;}
-
-                        else s = 37;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -2286,51 +2062,63 @@ public class InternalSMLexer extends Lexer {
 
                         else if ( (LA12_0=='}') ) {s = 14;}
 
-                        else if ( (LA12_0==',') ) {s = 15;}
+                        else if ( (LA12_0=='i') ) {s = 15;}
 
-                        else if ( (LA12_0=='v') ) {s = 16;}
+                        else if ( (LA12_0==',') ) {s = 16;}
 
-                        else if ( (LA12_0=='O') ) {s = 17;}
+                        else if ( (LA12_0=='v') ) {s = 17;}
 
-                        else if ( (LA12_0=='c') ) {s = 18;}
+                        else if ( (LA12_0==';') ) {s = 18;}
 
-                        else if ( (LA12_0=='I') ) {s = 19;}
+                        else if ( (LA12_0==':') ) {s = 19;}
 
-                        else if ( (LA12_0=='r') ) {s = 20;}
+                        else if ( (LA12_0=='E') ) {s = 20;}
 
-                        else if ( (LA12_0=='A') ) {s = 21;}
+                        else if ( (LA12_0=='r') ) {s = 21;}
 
                         else if ( (LA12_0=='_') ) {s = 22;}
 
-                        else if ( (LA12_0=='E') ) {s = 23;}
+                        else if ( (LA12_0=='V') ) {s = 23;}
 
-                        else if ( (LA12_0=='V') ) {s = 24;}
+                        else if ( (LA12_0=='-') ) {s = 24;}
 
-                        else if ( (LA12_0=='-') ) {s = 25;}
+                        else if ( (LA12_0=='b') ) {s = 25;}
 
-                        else if ( (LA12_0=='C') ) {s = 26;}
+                        else if ( (LA12_0=='^') ) {s = 26;}
 
-                        else if ( (LA12_0=='i') ) {s = 27;}
+                        else if ( ((LA12_0>='A' && LA12_0<='D')||(LA12_0>='F' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='U')||(LA12_0>='W' && LA12_0<='Z')||LA12_0=='c'||LA12_0=='h'||(LA12_0>='j' && LA12_0<='k')||(LA12_0>='p' && LA12_0<='q')||LA12_0=='u'||(LA12_0>='w' && LA12_0<='z')) ) {s = 27;}
 
-                        else if ( (LA12_0==':') ) {s = 28;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 28;}
 
-                        else if ( (LA12_0=='b') ) {s = 29;}
+                        else if ( (LA12_0=='\"') ) {s = 29;}
 
-                        else if ( (LA12_0=='^') ) {s = 30;}
+                        else if ( (LA12_0=='\'') ) {s = 30;}
 
-                        else if ( (LA12_0=='B'||LA12_0=='D'||(LA12_0>='F' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='N')||(LA12_0>='P' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='U')||(LA12_0>='W' && LA12_0<='Z')||LA12_0=='h'||(LA12_0>='j' && LA12_0<='k')||(LA12_0>='p' && LA12_0<='q')||LA12_0=='u'||(LA12_0>='w' && LA12_0<='z')) ) {s = 31;}
+                        else if ( (LA12_0=='/') ) {s = 31;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 32;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 32;}
 
-                        else if ( (LA12_0=='\"') ) {s = 33;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='.'||(LA12_0>='<' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 33;}
 
-                        else if ( (LA12_0=='\'') ) {s = 34;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_29 = input.LA(1);
 
-                        else if ( (LA12_0=='/') ) {s = 35;}
+                        s = -1;
+                        if ( ((LA12_29>='\u0000' && LA12_29<='\uFFFF')) ) {s = 73;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 36;}
+                        else s = 33;
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='.'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 37;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_30 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_30>='\u0000' && LA12_30<='\uFFFF')) ) {s = 73;}
+
+                        else s = 33;
 
                         if ( s>=0 ) return s;
                         break;

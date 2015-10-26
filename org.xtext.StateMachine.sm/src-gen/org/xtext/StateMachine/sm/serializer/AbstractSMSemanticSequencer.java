@@ -90,7 +90,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (_name=EString? variable=[Variable|EString] expression=ExpressionElement)
+	 *     (variable=[Variable|EString] expression=ExpressionElement)
 	 */
 	protected void sequence_Assignment(EObject context, Assignment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -124,14 +124,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         isActive?='isActive' 
-	 *         name=EString 
-	 *         operation=Operation? 
-	 *         states+=State 
-	 *         states+=State* 
-	 *         initialState=InitialState
-	 *     )
+	 *     (name=EString states+=State+ operation=Operation? initialState=InitialState)
 	 */
 	protected void sequence_CompositeState_Impl(EObject context, CompositeState semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -174,7 +167,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInitialStateAccess().getReferencedStateStateEStringParserRuleCall_3_0_1(), semanticObject.getReferencedState());
+		feeder.accept(grammarAccess.getInitialStateAccess().getReferencedStateStateEStringParserRuleCall_0_1(), semanticObject.getReferencedState());
 		feeder.finish();
 	}
 	
@@ -215,7 +208,15 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (isActive?='isActive' name=EString variables+=Variable* events+=Event events+=Event*)
+	 *     (
+	 *         name=EString 
+	 *         variables+=Variable* 
+	 *         events+=Event 
+	 *         events+=Event* 
+	 *         states+=State+ 
+	 *         initialState=InitialState 
+	 *         transitions+=Transition+
+	 *     )
 	 */
 	protected void sequence_StateMachine(EObject context, StateMachine semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -224,7 +225,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (isActive?='isActive' name=EString operation=Operation?)
+	 *     (name=EString operation=Operation?)
 	 */
 	protected void sequence_State_Impl(EObject context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
