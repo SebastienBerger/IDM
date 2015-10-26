@@ -67,7 +67,7 @@ Assignment returns Assignment:
 	variable=[Variable|EString] ':=' expression=ExpressionElement;
 
 Expression returns Expression:
-	'left' left=ExpressionElement
+	'guard' 'left' left=ExpressionElement
 		'op' operator=Operator
 		'right' right=ExpressionElement;
 

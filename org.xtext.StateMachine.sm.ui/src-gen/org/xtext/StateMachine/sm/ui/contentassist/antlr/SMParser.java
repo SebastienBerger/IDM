@@ -57,9 +57,6 @@ public class SMParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
-					put(grammarAccess.getExpressionAccess().getGroup_4(), "rule__Expression__Group_4__0");
-					put(grammarAccess.getVariableReferenceAccess().getGroup(), "rule__VariableReference__Group__0");
-					put(grammarAccess.getVariableReferenceAccess().getGroup_2(), "rule__VariableReference__Group_2__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 					put(grammarAccess.getCompositeState_ImplAccess().getGroup(), "rule__CompositeState_Impl__Group__0");
 					put(grammarAccess.getCompositeState_ImplAccess().getGroup_4(), "rule__CompositeState_Impl__Group_4__0");
@@ -86,14 +83,12 @@ public class SMParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getNameAssignment_1(), "rule__Event__NameAssignment_1");
 					put(grammarAccess.getAssignmentAccess().getVariableAssignment_0(), "rule__Assignment__VariableAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getExpressionAssignment_2(), "rule__Assignment__ExpressionAssignment_2");
+					put(grammarAccess.getExpressionAccess().getLeftAssignment_1(), "rule__Expression__LeftAssignment_1");
 					put(grammarAccess.getExpressionAccess().getOperatorAssignment_3(), "rule__Expression__OperatorAssignment_3");
-					put(grammarAccess.getExpressionAccess().get_nameAssignment_4_1(), "rule__Expression___nameAssignment_4_1");
-					put(grammarAccess.getExpressionAccess().getLeftAssignment_6(), "rule__Expression__LeftAssignment_6");
-					put(grammarAccess.getExpressionAccess().getRightAssignment_8(), "rule__Expression__RightAssignment_8");
+					put(grammarAccess.getExpressionAccess().getRightAssignment_5(), "rule__Expression__RightAssignment_5");
 					put(grammarAccess.getBooleanDataAccess().getValueAssignment(), "rule__BooleanData__ValueAssignment");
 					put(grammarAccess.getIntegerDataAccess().getValueAssignment(), "rule__IntegerData__ValueAssignment");
-					put(grammarAccess.getVariableReferenceAccess().get_nameAssignment_2_1(), "rule__VariableReference___nameAssignment_2_1");
-					put(grammarAccess.getVariableReferenceAccess().getVariableAssignment_4(), "rule__VariableReference__VariableAssignment_4");
+					put(grammarAccess.getVariableReferenceAccess().getVariableAssignment(), "rule__VariableReference__VariableAssignment");
 					put(grammarAccess.getCompositeState_ImplAccess().getNameAssignment_1(), "rule__CompositeState_Impl__NameAssignment_1");
 					put(grammarAccess.getCompositeState_ImplAccess().getStatesAssignment_3(), "rule__CompositeState_Impl__StatesAssignment_3");
 					put(grammarAccess.getCompositeState_ImplAccess().getOperationAssignment_4_1(), "rule__CompositeState_Impl__OperationAssignment_4_1");

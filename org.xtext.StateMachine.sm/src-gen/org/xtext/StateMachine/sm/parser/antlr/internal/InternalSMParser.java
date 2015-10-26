@@ -22,9 +22,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSMParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'StateMachine'", "'{'", "'events'", "','", "'}'", "'init with'", "'var'", "'true'", "'false'", "';'", "'state'", "'do'", "'from'", "'to'", "'for'", "'guard'", "':='", "'Expression'", "'operator'", "'_name'", "'left'", "'right'", "'VariableReference'", "'variable'", "'-'", "':'", "'boolean'", "'integer'", "'add'", "'sub'", "'eq'", "'mul'", "'gt'", "'lt'", "'lte'", "'gte'", "'div'", "'and'", "'neq'", "'or'", "'not'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'StateMachine'", "'{'", "'events'", "','", "'}'", "'init with'", "'var'", "'true'", "'false'", "';'", "'state'", "'do'", "'from'", "'to'", "'for'", "'guard'", "':='", "'left'", "'op'", "'right'", "'-'", "':'", "'boolean'", "'integer'", "'add'", "'sub'", "'eq'", "'mul'", "'gt'", "'lt'", "'lte'", "'gte'", "'div'", "'and'", "'neq'", "'or'", "'not'"
     };
-    public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -34,7 +33,6 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
-    public static final int T__51=51;
     public static final int RULE_ID=5;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -63,8 +61,6 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
     public static final int T__32=32;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__48=48;
-    public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
@@ -813,14 +809,14 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
             if ( (LA6_0==RULE_STRING) ) {
                 int LA6_1 = input.LA(2);
 
-                if ( (LA6_1==36) ) {
+                if ( (LA6_1==32) ) {
                     int LA6_3 = input.LA(3);
 
-                    if ( (LA6_3==38) ) {
-                        alt6=2;
-                    }
-                    else if ( (LA6_3==37) ) {
+                    if ( (LA6_3==33) ) {
                         alt6=1;
+                    }
+                    else if ( (LA6_3==34) ) {
+                        alt6=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -839,14 +835,14 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
             else if ( (LA6_0==RULE_ID) ) {
                 int LA6_2 = input.LA(2);
 
-                if ( (LA6_2==36) ) {
+                if ( (LA6_2==32) ) {
                     int LA6_3 = input.LA(3);
 
-                    if ( (LA6_3==38) ) {
-                        alt6=2;
-                    }
-                    else if ( (LA6_3==37) ) {
+                    if ( (LA6_3==33) ) {
                         alt6=1;
+                    }
+                    else if ( (LA6_3==34) ) {
+                        alt6=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -999,12 +995,13 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case RULE_INT:
-            case 35:
+            case 31:
                 {
                 alt7=3;
                 }
                 break;
-            case 33:
+            case RULE_STRING:
+            case RULE_ID:
                 {
                 alt7=4;
                 }
@@ -2308,57 +2305,78 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:869:1: ruleExpression returns [EObject current=null] : (otherlv_0= 'Expression' otherlv_1= '{' otherlv_2= 'operator' ( (lv_operator_3_0= ruleOperator ) ) (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )? otherlv_6= 'left' ( (lv_left_7_0= ruleExpressionElement ) ) otherlv_8= 'right' ( (lv_right_9_0= ruleExpressionElement ) ) otherlv_10= '}' ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:869:1: ruleExpression returns [EObject current=null] : (otherlv_0= 'left' ( (lv_left_1_0= ruleExpressionElement ) ) otherlv_2= 'op' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'right' ( (lv_right_5_0= ruleExpressionElement ) ) ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
+        EObject lv_left_1_0 = null;
+
         Enumerator lv_operator_3_0 = null;
 
-        AntlrDatatypeRuleToken lv__name_5_0 = null;
-
-        EObject lv_left_7_0 = null;
-
-        EObject lv_right_9_0 = null;
+        EObject lv_right_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:872:28: ( (otherlv_0= 'Expression' otherlv_1= '{' otherlv_2= 'operator' ( (lv_operator_3_0= ruleOperator ) ) (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )? otherlv_6= 'left' ( (lv_left_7_0= ruleExpressionElement ) ) otherlv_8= 'right' ( (lv_right_9_0= ruleExpressionElement ) ) otherlv_10= '}' ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:1: (otherlv_0= 'Expression' otherlv_1= '{' otherlv_2= 'operator' ( (lv_operator_3_0= ruleOperator ) ) (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )? otherlv_6= 'left' ( (lv_left_7_0= ruleExpressionElement ) ) otherlv_8= 'right' ( (lv_right_9_0= ruleExpressionElement ) ) otherlv_10= '}' )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:872:28: ( (otherlv_0= 'left' ( (lv_left_1_0= ruleExpressionElement ) ) otherlv_2= 'op' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'right' ( (lv_right_5_0= ruleExpressionElement ) ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:1: (otherlv_0= 'left' ( (lv_left_1_0= ruleExpressionElement ) ) otherlv_2= 'op' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'right' ( (lv_right_5_0= ruleExpressionElement ) ) )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:1: (otherlv_0= 'Expression' otherlv_1= '{' otherlv_2= 'operator' ( (lv_operator_3_0= ruleOperator ) ) (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )? otherlv_6= 'left' ( (lv_left_7_0= ruleExpressionElement ) ) otherlv_8= 'right' ( (lv_right_9_0= ruleExpressionElement ) ) otherlv_10= '}' )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:3: otherlv_0= 'Expression' otherlv_1= '{' otherlv_2= 'operator' ( (lv_operator_3_0= ruleOperator ) ) (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )? otherlv_6= 'left' ( (lv_left_7_0= ruleExpressionElement ) ) otherlv_8= 'right' ( (lv_right_9_0= ruleExpressionElement ) ) otherlv_10= '}'
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:1: (otherlv_0= 'left' ( (lv_left_1_0= ruleExpressionElement ) ) otherlv_2= 'op' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'right' ( (lv_right_5_0= ruleExpressionElement ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:873:3: otherlv_0= 'left' ( (lv_left_1_0= ruleExpressionElement ) ) otherlv_2= 'op' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'right' ( (lv_right_5_0= ruleExpressionElement ) )
             {
             otherlv_0=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleExpression1989); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getExpressionAccess().getExpressionKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getExpressionAccess().getLeftKeyword_0());
                 
-            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleExpression2001); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getExpressionAccess().getLeftCurlyBracketKeyword_1());
-                
-            otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleExpression2013); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getOperatorKeyword_2());
-                
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:885:1: ( (lv_operator_3_0= ruleOperator ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:886:1: (lv_operator_3_0= ruleOperator )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:877:1: ( (lv_left_1_0= ruleExpressionElement ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:878:1: (lv_left_1_0= ruleExpressionElement )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:886:1: (lv_operator_3_0= ruleOperator )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:887:3: lv_operator_3_0= ruleOperator
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:878:1: (lv_left_1_0= ruleExpressionElement )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:879:3: lv_left_1_0= ruleExpressionElement
+            {
+             
+            	        newCompositeNode(grammarAccess.getExpressionAccess().getLeftExpressionElementParserRuleCall_1_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleExpressionElement_in_ruleExpression2010);
+            lv_left_1_0=ruleExpressionElement();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getExpressionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"left",
+                    		lv_left_1_0, 
+                    		"ExpressionElement");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleExpression2022); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getOpKeyword_2());
+                
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:899:1: ( (lv_operator_3_0= ruleOperator ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:900:1: (lv_operator_3_0= ruleOperator )
+            {
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:900:1: (lv_operator_3_0= ruleOperator )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:901:3: lv_operator_3_0= ruleOperator
             {
              
             	        newCompositeNode(grammarAccess.getExpressionAccess().getOperatorOperatorEnumRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleOperator_in_ruleExpression2034);
+            pushFollow(FollowSets000.FOLLOW_ruleOperator_in_ruleExpression2043);
             lv_operator_3_0=ruleOperator();
 
             state._fsp--;
@@ -2380,108 +2398,21 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:903:2: (otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            otherlv_4=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleExpression2055); 
 
-            if ( (LA14_0==30) ) {
-                alt14=1;
-            }
-            switch (alt14) {
-                case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:903:4: otherlv_4= '_name' ( (lv__name_5_0= ruleEString ) )
-                    {
-                    otherlv_4=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleExpression2047); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getExpressionAccess().get_nameKeyword_4_0());
-                        
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:907:1: ( (lv__name_5_0= ruleEString ) )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:908:1: (lv__name_5_0= ruleEString )
-                    {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:908:1: (lv__name_5_0= ruleEString )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:909:3: lv__name_5_0= ruleEString
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getExpressionAccess().get_nameEStringParserRuleCall_4_1_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleExpression2068);
-                    lv__name_5_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getExpressionRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"_name",
-                            		lv__name_5_0, 
-                            		"EString");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_6=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleExpression2082); 
-
-                	newLeafNode(otherlv_6, grammarAccess.getExpressionAccess().getLeftKeyword_5());
+                	newLeafNode(otherlv_4, grammarAccess.getExpressionAccess().getRightKeyword_4());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:929:1: ( (lv_left_7_0= ruleExpressionElement ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:930:1: (lv_left_7_0= ruleExpressionElement )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:921:1: ( (lv_right_5_0= ruleExpressionElement ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:922:1: (lv_right_5_0= ruleExpressionElement )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:930:1: (lv_left_7_0= ruleExpressionElement )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:931:3: lv_left_7_0= ruleExpressionElement
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:922:1: (lv_right_5_0= ruleExpressionElement )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:923:3: lv_right_5_0= ruleExpressionElement
             {
              
-            	        newCompositeNode(grammarAccess.getExpressionAccess().getLeftExpressionElementParserRuleCall_6_0()); 
+            	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionElementParserRuleCall_5_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleExpressionElement_in_ruleExpression2103);
-            lv_left_7_0=ruleExpressionElement();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getExpressionRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"left",
-                    		lv_left_7_0, 
-                    		"ExpressionElement");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleExpression2115); 
-
-                	newLeafNode(otherlv_8, grammarAccess.getExpressionAccess().getRightKeyword_7());
-                
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:951:1: ( (lv_right_9_0= ruleExpressionElement ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:952:1: (lv_right_9_0= ruleExpressionElement )
-            {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:952:1: (lv_right_9_0= ruleExpressionElement )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:953:3: lv_right_9_0= ruleExpressionElement
-            {
-             
-            	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionElementParserRuleCall_8_0()); 
-            	    
-            pushFollow(FollowSets000.FOLLOW_ruleExpressionElement_in_ruleExpression2136);
-            lv_right_9_0=ruleExpressionElement();
+            pushFollow(FollowSets000.FOLLOW_ruleExpressionElement_in_ruleExpression2076);
+            lv_right_5_0=ruleExpressionElement();
 
             state._fsp--;
 
@@ -2492,7 +2423,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"right",
-                    		lv_right_9_0, 
+                    		lv_right_5_0, 
                     		"ExpressionElement");
             	        afterParserOrEnumRuleCall();
             	    
@@ -2502,10 +2433,6 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleExpression2148); 
-
-                	newLeafNode(otherlv_10, grammarAccess.getExpressionAccess().getRightCurlyBracketKeyword_9());
-                
 
             }
 
@@ -2527,7 +2454,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanData"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:981:1: entryRuleBooleanData returns [EObject current=null] : iv_ruleBooleanData= ruleBooleanData EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:947:1: entryRuleBooleanData returns [EObject current=null] : iv_ruleBooleanData= ruleBooleanData EOF ;
     public final EObject entryRuleBooleanData() throws RecognitionException {
         EObject current = null;
 
@@ -2535,17 +2462,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:982:2: (iv_ruleBooleanData= ruleBooleanData EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:983:2: iv_ruleBooleanData= ruleBooleanData EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:948:2: (iv_ruleBooleanData= ruleBooleanData EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:949:2: iv_ruleBooleanData= ruleBooleanData EOF
             {
              newCompositeNode(grammarAccess.getBooleanDataRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBooleanData_in_entryRuleBooleanData2184);
+            pushFollow(FollowSets000.FOLLOW_ruleBooleanData_in_entryRuleBooleanData2112);
             iv_ruleBooleanData=ruleBooleanData();
 
             state._fsp--;
 
              current =iv_ruleBooleanData; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBooleanData2194); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBooleanData2122); 
 
             }
 
@@ -2563,7 +2490,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanData"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:990:1: ruleBooleanData returns [EObject current=null] : ( (lv_value_0_0= ruleEBoolean ) ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:956:1: ruleBooleanData returns [EObject current=null] : ( (lv_value_0_0= ruleEBoolean ) ) ;
     public final EObject ruleBooleanData() throws RecognitionException {
         EObject current = null;
 
@@ -2573,19 +2500,19 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:993:28: ( ( (lv_value_0_0= ruleEBoolean ) ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:994:1: ( (lv_value_0_0= ruleEBoolean ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:959:28: ( ( (lv_value_0_0= ruleEBoolean ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:960:1: ( (lv_value_0_0= ruleEBoolean ) )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:994:1: ( (lv_value_0_0= ruleEBoolean ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:995:1: (lv_value_0_0= ruleEBoolean )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:960:1: ( (lv_value_0_0= ruleEBoolean ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:961:1: (lv_value_0_0= ruleEBoolean )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:995:1: (lv_value_0_0= ruleEBoolean )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:996:3: lv_value_0_0= ruleEBoolean
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:961:1: (lv_value_0_0= ruleEBoolean )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:962:3: lv_value_0_0= ruleEBoolean
             {
              
             	        newCompositeNode(grammarAccess.getBooleanDataAccess().getValueEBooleanParserRuleCall_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleBooleanData2239);
+            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleBooleanData2167);
             lv_value_0_0=ruleEBoolean();
 
             state._fsp--;
@@ -2625,7 +2552,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerData"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1020:1: entryRuleIntegerData returns [EObject current=null] : iv_ruleIntegerData= ruleIntegerData EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:986:1: entryRuleIntegerData returns [EObject current=null] : iv_ruleIntegerData= ruleIntegerData EOF ;
     public final EObject entryRuleIntegerData() throws RecognitionException {
         EObject current = null;
 
@@ -2633,17 +2560,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1021:2: (iv_ruleIntegerData= ruleIntegerData EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1022:2: iv_ruleIntegerData= ruleIntegerData EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:987:2: (iv_ruleIntegerData= ruleIntegerData EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:988:2: iv_ruleIntegerData= ruleIntegerData EOF
             {
              newCompositeNode(grammarAccess.getIntegerDataRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIntegerData_in_entryRuleIntegerData2274);
+            pushFollow(FollowSets000.FOLLOW_ruleIntegerData_in_entryRuleIntegerData2202);
             iv_ruleIntegerData=ruleIntegerData();
 
             state._fsp--;
 
              current =iv_ruleIntegerData; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntegerData2284); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntegerData2212); 
 
             }
 
@@ -2661,7 +2588,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerData"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1029:1: ruleIntegerData returns [EObject current=null] : ( (lv_value_0_0= ruleEInt ) ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:995:1: ruleIntegerData returns [EObject current=null] : ( (lv_value_0_0= ruleEInt ) ) ;
     public final EObject ruleIntegerData() throws RecognitionException {
         EObject current = null;
 
@@ -2671,19 +2598,19 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1032:28: ( ( (lv_value_0_0= ruleEInt ) ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1033:1: ( (lv_value_0_0= ruleEInt ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:998:28: ( ( (lv_value_0_0= ruleEInt ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:999:1: ( (lv_value_0_0= ruleEInt ) )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1033:1: ( (lv_value_0_0= ruleEInt ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1034:1: (lv_value_0_0= ruleEInt )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:999:1: ( (lv_value_0_0= ruleEInt ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1000:1: (lv_value_0_0= ruleEInt )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1034:1: (lv_value_0_0= ruleEInt )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1035:3: lv_value_0_0= ruleEInt
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1000:1: (lv_value_0_0= ruleEInt )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1001:3: lv_value_0_0= ruleEInt
             {
              
             	        newCompositeNode(grammarAccess.getIntegerDataAccess().getValueEIntParserRuleCall_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleIntegerData2329);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleIntegerData2257);
             lv_value_0_0=ruleEInt();
 
             state._fsp--;
@@ -2723,7 +2650,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableReference"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1059:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1025:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
     public final EObject entryRuleVariableReference() throws RecognitionException {
         EObject current = null;
 
@@ -2731,17 +2658,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1060:2: (iv_ruleVariableReference= ruleVariableReference EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1061:2: iv_ruleVariableReference= ruleVariableReference EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1026:2: (iv_ruleVariableReference= ruleVariableReference EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1027:2: iv_ruleVariableReference= ruleVariableReference EOF
             {
              newCompositeNode(grammarAccess.getVariableReferenceRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariableReference_in_entryRuleVariableReference2364);
+            pushFollow(FollowSets000.FOLLOW_ruleVariableReference_in_entryRuleVariableReference2292);
             iv_ruleVariableReference=ruleVariableReference();
 
             state._fsp--;
 
              current =iv_ruleVariableReference; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleVariableReference2374); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleVariableReference2302); 
 
             }
 
@@ -2759,96 +2686,21 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableReference"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1068:1: ruleVariableReference returns [EObject current=null] : (otherlv_0= 'VariableReference' otherlv_1= '{' (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )? otherlv_4= 'variable' ( ( ruleEString ) ) otherlv_6= '}' ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1034:1: ruleVariableReference returns [EObject current=null] : ( ( ruleEString ) ) ;
     public final EObject ruleVariableReference() throws RecognitionException {
         EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        AntlrDatatypeRuleToken lv__name_3_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1071:28: ( (otherlv_0= 'VariableReference' otherlv_1= '{' (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )? otherlv_4= 'variable' ( ( ruleEString ) ) otherlv_6= '}' ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1072:1: (otherlv_0= 'VariableReference' otherlv_1= '{' (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )? otherlv_4= 'variable' ( ( ruleEString ) ) otherlv_6= '}' )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1037:28: ( ( ( ruleEString ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1038:1: ( ( ruleEString ) )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1072:1: (otherlv_0= 'VariableReference' otherlv_1= '{' (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )? otherlv_4= 'variable' ( ( ruleEString ) ) otherlv_6= '}' )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1072:3: otherlv_0= 'VariableReference' otherlv_1= '{' (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )? otherlv_4= 'variable' ( ( ruleEString ) ) otherlv_6= '}'
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1038:1: ( ( ruleEString ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1039:1: ( ruleEString )
             {
-            otherlv_0=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleVariableReference2411); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getVariableReferenceAccess().getVariableReferenceKeyword_0());
-                
-            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleVariableReference2423); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getVariableReferenceAccess().getLeftCurlyBracketKeyword_1());
-                
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1080:1: (otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( (LA15_0==30) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1080:3: otherlv_2= '_name' ( (lv__name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleVariableReference2436); 
-
-                        	newLeafNode(otherlv_2, grammarAccess.getVariableReferenceAccess().get_nameKeyword_2_0());
-                        
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1084:1: ( (lv__name_3_0= ruleEString ) )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1085:1: (lv__name_3_0= ruleEString )
-                    {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1085:1: (lv__name_3_0= ruleEString )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1086:3: lv__name_3_0= ruleEString
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getVariableReferenceAccess().get_nameEStringParserRuleCall_2_1_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleVariableReference2457);
-                    lv__name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getVariableReferenceRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"_name",
-                            		lv__name_3_0, 
-                            		"EString");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_4=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleVariableReference2471); 
-
-                	newLeafNode(otherlv_4, grammarAccess.getVariableReferenceAccess().getVariableKeyword_3());
-                
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1106:1: ( ( ruleEString ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1107:1: ( ruleEString )
-            {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1107:1: ( ruleEString )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1108:3: ruleEString
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1039:1: ( ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1040:3: ruleEString
             {
 
             			if (current==null) {
@@ -2856,9 +2708,9 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
             	        }
                     
              
-            	        newCompositeNode(grammarAccess.getVariableReferenceAccess().getVariableVariableCrossReference_4_0()); 
+            	        newCompositeNode(grammarAccess.getVariableReferenceAccess().getVariableVariableCrossReference_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleVariableReference2494);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleVariableReference2349);
             ruleEString();
 
             state._fsp--;
@@ -2869,13 +2721,6 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-
-            }
-
-            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleVariableReference2506); 
-
-                	newLeafNode(otherlv_6, grammarAccess.getVariableReferenceAccess().getRightCurlyBracketKeyword_5());
-                
 
             }
 
@@ -2897,7 +2742,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1133:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1061:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -2905,17 +2750,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1134:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1135:2: iv_ruleEInt= ruleEInt EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1062:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1063:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt2543);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt2385);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
 
              current =iv_ruleEInt.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt2554); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt2396); 
 
             }
 
@@ -2933,7 +2778,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1142:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1070:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2943,24 +2788,24 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1145:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1146:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1073:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1074:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1146:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1146:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1074:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1074:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1146:2: (kw= '-' )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1074:2: (kw= '-' )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA16_0==35) ) {
-                alt16=1;
+            if ( (LA14_0==31) ) {
+                alt14=1;
             }
-            switch (alt16) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1147:2: kw= '-'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1075:2: kw= '-'
                     {
-                    kw=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleEInt2593); 
+                    kw=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleEInt2435); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
@@ -2971,7 +2816,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt2610); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt2452); 
 
             		current.merge(this_INT_1);
                 
@@ -2999,7 +2844,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompositeState_Impl"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1167:1: entryRuleCompositeState_Impl returns [EObject current=null] : iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1095:1: entryRuleCompositeState_Impl returns [EObject current=null] : iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF ;
     public final EObject entryRuleCompositeState_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3007,17 +2852,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1168:2: (iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1169:2: iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1096:2: (iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1097:2: iv_ruleCompositeState_Impl= ruleCompositeState_Impl EOF
             {
              newCompositeNode(grammarAccess.getCompositeState_ImplRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleCompositeState_Impl_in_entryRuleCompositeState_Impl2655);
+            pushFollow(FollowSets000.FOLLOW_ruleCompositeState_Impl_in_entryRuleCompositeState_Impl2497);
             iv_ruleCompositeState_Impl=ruleCompositeState_Impl();
 
             state._fsp--;
 
              current =iv_ruleCompositeState_Impl; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCompositeState_Impl2665); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCompositeState_Impl2507); 
 
             }
 
@@ -3035,7 +2880,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeState_Impl"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1176:1: ruleCompositeState_Impl returns [EObject current=null] : (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1104:1: ruleCompositeState_Impl returns [EObject current=null] : (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' ) ;
     public final EObject ruleCompositeState_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3056,26 +2901,26 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1179:28: ( (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1180:1: (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1107:28: ( (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1108:1: (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1180:1: (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1180:3: otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}'
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1108:1: (otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}' )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1108:3: otherlv_0= 'state' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_states_3_0= ruleState ) )+ (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )? otherlv_6= 'init with' ( (lv_initialState_7_0= ruleInitialState ) ) otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleCompositeState_Impl2702); 
+            otherlv_0=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleCompositeState_Impl2544); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCompositeState_ImplAccess().getStateKeyword_0());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1184:1: ( (lv_name_1_0= ruleEString ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1185:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1112:1: ( (lv_name_1_0= ruleEString ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1113:1: (lv_name_1_0= ruleEString )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1185:1: (lv_name_1_0= ruleEString )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1186:3: lv_name_1_0= ruleEString
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1113:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1114:3: lv_name_1_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getCompositeState_ImplAccess().getNameEStringParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCompositeState_Impl2723);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCompositeState_Impl2565);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -3097,33 +2942,33 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCompositeState_Impl2735); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCompositeState_Impl2577); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCompositeState_ImplAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1206:1: ( (lv_states_3_0= ruleState ) )+
-            int cnt17=0;
-            loop17:
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1134:1: ( (lv_states_3_0= ruleState ) )+
+            int cnt15=0;
+            loop15:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA17_0==11||LA17_0==21) ) {
-                    alt17=1;
+                if ( (LA15_0==11||LA15_0==21) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1207:1: (lv_states_3_0= ruleState )
+            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1135:1: (lv_states_3_0= ruleState )
             	    {
-            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1207:1: (lv_states_3_0= ruleState )
-            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1208:3: lv_states_3_0= ruleState
+            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1135:1: (lv_states_3_0= ruleState )
+            	    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1136:3: lv_states_3_0= ruleState
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getCompositeState_ImplAccess().getStatesStateParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleState_in_ruleCompositeState_Impl2756);
+            	    pushFollow(FollowSets000.FOLLOW_ruleState_in_ruleCompositeState_Impl2598);
             	    lv_states_3_0=ruleState();
 
             	    state._fsp--;
@@ -3147,39 +2992,39 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt17 >= 1 ) break loop17;
+            	    if ( cnt15 >= 1 ) break loop15;
                         EarlyExitException eee =
-                            new EarlyExitException(17, input);
+                            new EarlyExitException(15, input);
                         throw eee;
                 }
-                cnt17++;
+                cnt15++;
             } while (true);
 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1224:3: (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1152:3: (otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA18_0==22) ) {
-                alt18=1;
+            if ( (LA16_0==22) ) {
+                alt16=1;
             }
-            switch (alt18) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1224:5: otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1152:5: otherlv_4= 'do' ( (lv_operation_5_0= ruleOperation ) )
                     {
-                    otherlv_4=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleCompositeState_Impl2770); 
+                    otherlv_4=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleCompositeState_Impl2612); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getCompositeState_ImplAccess().getDoKeyword_4_0());
                         
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1228:1: ( (lv_operation_5_0= ruleOperation ) )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1229:1: (lv_operation_5_0= ruleOperation )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1156:1: ( (lv_operation_5_0= ruleOperation ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1157:1: (lv_operation_5_0= ruleOperation )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1229:1: (lv_operation_5_0= ruleOperation )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1230:3: lv_operation_5_0= ruleOperation
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1157:1: (lv_operation_5_0= ruleOperation )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1158:3: lv_operation_5_0= ruleOperation
                     {
                      
                     	        newCompositeNode(grammarAccess.getCompositeState_ImplAccess().getOperationOperationParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleOperation_in_ruleCompositeState_Impl2791);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperation_in_ruleCompositeState_Impl2633);
                     lv_operation_5_0=ruleOperation();
 
                     state._fsp--;
@@ -3207,20 +3052,20 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleCompositeState_Impl2805); 
+            otherlv_6=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleCompositeState_Impl2647); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getCompositeState_ImplAccess().getInitWithKeyword_5());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1250:1: ( (lv_initialState_7_0= ruleInitialState ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1251:1: (lv_initialState_7_0= ruleInitialState )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1178:1: ( (lv_initialState_7_0= ruleInitialState ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1179:1: (lv_initialState_7_0= ruleInitialState )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1251:1: (lv_initialState_7_0= ruleInitialState )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1252:3: lv_initialState_7_0= ruleInitialState
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1179:1: (lv_initialState_7_0= ruleInitialState )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1180:3: lv_initialState_7_0= ruleInitialState
             {
              
             	        newCompositeNode(grammarAccess.getCompositeState_ImplAccess().getInitialStateInitialStateParserRuleCall_6_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleInitialState_in_ruleCompositeState_Impl2826);
+            pushFollow(FollowSets000.FOLLOW_ruleInitialState_in_ruleCompositeState_Impl2668);
             lv_initialState_7_0=ruleInitialState();
 
             state._fsp--;
@@ -3242,7 +3087,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCompositeState_Impl2838); 
+            otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCompositeState_Impl2680); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getCompositeState_ImplAccess().getRightCurlyBracketKeyword_7());
                 
@@ -3267,7 +3112,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanVariable"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1280:1: entryRuleBooleanVariable returns [EObject current=null] : iv_ruleBooleanVariable= ruleBooleanVariable EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1208:1: entryRuleBooleanVariable returns [EObject current=null] : iv_ruleBooleanVariable= ruleBooleanVariable EOF ;
     public final EObject entryRuleBooleanVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3275,17 +3120,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1281:2: (iv_ruleBooleanVariable= ruleBooleanVariable EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1282:2: iv_ruleBooleanVariable= ruleBooleanVariable EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1209:2: (iv_ruleBooleanVariable= ruleBooleanVariable EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1210:2: iv_ruleBooleanVariable= ruleBooleanVariable EOF
             {
              newCompositeNode(grammarAccess.getBooleanVariableRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBooleanVariable_in_entryRuleBooleanVariable2874);
+            pushFollow(FollowSets000.FOLLOW_ruleBooleanVariable_in_entryRuleBooleanVariable2716);
             iv_ruleBooleanVariable=ruleBooleanVariable();
 
             state._fsp--;
 
              current =iv_ruleBooleanVariable; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBooleanVariable2884); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBooleanVariable2726); 
 
             }
 
@@ -3303,7 +3148,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanVariable"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1289:1: ruleBooleanVariable returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1217:1: ruleBooleanVariable returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? ) ;
     public final EObject ruleBooleanVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3318,14 +3163,14 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1292:28: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1293:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1220:28: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1221:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1293:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1293:2: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )?
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1221:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )? )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1221:2: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'boolean' (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )?
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1293:2: ()
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1294:5: 
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1221:2: ()
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1222:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3335,16 +3180,16 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1299:2: ( (lv_name_1_0= ruleEString ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1300:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1227:2: ( (lv_name_1_0= ruleEString ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1228:1: (lv_name_1_0= ruleEString )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1300:1: (lv_name_1_0= ruleEString )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1301:3: lv_name_1_0= ruleEString
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1228:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1229:3: lv_name_1_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getBooleanVariableAccess().getNameEStringParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleBooleanVariable2939);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleBooleanVariable2781);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -3366,39 +3211,39 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleBooleanVariable2951); 
+            otherlv_2=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleBooleanVariable2793); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBooleanVariableAccess().getColonKeyword_2());
                 
-            otherlv_3=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleBooleanVariable2963); 
+            otherlv_3=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleBooleanVariable2805); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getBooleanVariableAccess().getBooleanKeyword_3());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1325:1: (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1253:1: (otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA19_0==27) ) {
-                alt19=1;
+            if ( (LA17_0==27) ) {
+                alt17=1;
             }
-            switch (alt19) {
+            switch (alt17) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1325:3: otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1253:3: otherlv_4= ':=' ( (lv_value_5_0= ruleBooleanData ) )
                     {
-                    otherlv_4=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleBooleanVariable2976); 
+                    otherlv_4=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleBooleanVariable2818); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getBooleanVariableAccess().getColonEqualsSignKeyword_4_0());
                         
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1329:1: ( (lv_value_5_0= ruleBooleanData ) )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1330:1: (lv_value_5_0= ruleBooleanData )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1257:1: ( (lv_value_5_0= ruleBooleanData ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1258:1: (lv_value_5_0= ruleBooleanData )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1330:1: (lv_value_5_0= ruleBooleanData )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1331:3: lv_value_5_0= ruleBooleanData
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1258:1: (lv_value_5_0= ruleBooleanData )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1259:3: lv_value_5_0= ruleBooleanData
                     {
                      
                     	        newCompositeNode(grammarAccess.getBooleanVariableAccess().getValueBooleanDataParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleBooleanData_in_ruleBooleanVariable2997);
+                    pushFollow(FollowSets000.FOLLOW_ruleBooleanData_in_ruleBooleanVariable2839);
                     lv_value_5_0=ruleBooleanData();
 
                     state._fsp--;
@@ -3447,7 +3292,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerVariable"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1355:1: entryRuleIntegerVariable returns [EObject current=null] : iv_ruleIntegerVariable= ruleIntegerVariable EOF ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1283:1: entryRuleIntegerVariable returns [EObject current=null] : iv_ruleIntegerVariable= ruleIntegerVariable EOF ;
     public final EObject entryRuleIntegerVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3455,17 +3300,17 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1356:2: (iv_ruleIntegerVariable= ruleIntegerVariable EOF )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1357:2: iv_ruleIntegerVariable= ruleIntegerVariable EOF
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1284:2: (iv_ruleIntegerVariable= ruleIntegerVariable EOF )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1285:2: iv_ruleIntegerVariable= ruleIntegerVariable EOF
             {
              newCompositeNode(grammarAccess.getIntegerVariableRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIntegerVariable_in_entryRuleIntegerVariable3035);
+            pushFollow(FollowSets000.FOLLOW_ruleIntegerVariable_in_entryRuleIntegerVariable2877);
             iv_ruleIntegerVariable=ruleIntegerVariable();
 
             state._fsp--;
 
              current =iv_ruleIntegerVariable; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntegerVariable3045); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntegerVariable2887); 
 
             }
 
@@ -3483,7 +3328,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerVariable"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1364:1: ruleIntegerVariable returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1292:1: ruleIntegerVariable returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? ) ;
     public final EObject ruleIntegerVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3498,14 +3343,14 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1367:28: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1368:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1295:28: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1296:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1368:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1368:2: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )?
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1296:1: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )? )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1296:2: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'integer' (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )?
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1368:2: ()
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1369:5: 
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1296:2: ()
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1297:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3515,16 +3360,16 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1374:2: ( (lv_name_1_0= ruleEString ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1375:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1302:2: ( (lv_name_1_0= ruleEString ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1303:1: (lv_name_1_0= ruleEString )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1375:1: (lv_name_1_0= ruleEString )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1376:3: lv_name_1_0= ruleEString
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1303:1: (lv_name_1_0= ruleEString )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1304:3: lv_name_1_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getIntegerVariableAccess().getNameEStringParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleIntegerVariable3100);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleIntegerVariable2942);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -3546,39 +3391,39 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleIntegerVariable3112); 
+            otherlv_2=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleIntegerVariable2954); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getIntegerVariableAccess().getColonKeyword_2());
                 
-            otherlv_3=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleIntegerVariable3124); 
+            otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleIntegerVariable2966); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getIntegerVariableAccess().getIntegerKeyword_3());
                 
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1400:1: (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1328:1: (otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) ) )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA20_0==27) ) {
-                alt20=1;
+            if ( (LA18_0==27) ) {
+                alt18=1;
             }
-            switch (alt20) {
+            switch (alt18) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1400:3: otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1328:3: otherlv_4= ':=' ( (lv_value_5_0= ruleIntegerData ) )
                     {
-                    otherlv_4=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleIntegerVariable3137); 
+                    otherlv_4=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleIntegerVariable2979); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getIntegerVariableAccess().getColonEqualsSignKeyword_4_0());
                         
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1404:1: ( (lv_value_5_0= ruleIntegerData ) )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1405:1: (lv_value_5_0= ruleIntegerData )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1332:1: ( (lv_value_5_0= ruleIntegerData ) )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1333:1: (lv_value_5_0= ruleIntegerData )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1405:1: (lv_value_5_0= ruleIntegerData )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1406:3: lv_value_5_0= ruleIntegerData
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1333:1: (lv_value_5_0= ruleIntegerData )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1334:3: lv_value_5_0= ruleIntegerData
                     {
                      
                     	        newCompositeNode(grammarAccess.getIntegerVariableAccess().getValueIntegerDataParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleIntegerData_in_ruleIntegerVariable3158);
+                    pushFollow(FollowSets000.FOLLOW_ruleIntegerData_in_ruleIntegerVariable3000);
                     lv_value_5_0=ruleIntegerData();
 
                     state._fsp--;
@@ -3627,7 +3472,7 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1430:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) ) ;
+    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1358:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) ) ;
     public final Enumerator ruleOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -3647,92 +3492,92 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1432:28: ( ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) ) )
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:1: ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1360:28: ( ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) ) )
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1361:1: ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) )
             {
-            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:1: ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) )
-            int alt21=13;
+            // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1361:1: ( (enumLiteral_0= 'add' ) | (enumLiteral_1= 'sub' ) | (enumLiteral_2= 'eq' ) | (enumLiteral_3= 'mul' ) | (enumLiteral_4= 'gt' ) | (enumLiteral_5= 'lt' ) | (enumLiteral_6= 'lte' ) | (enumLiteral_7= 'gte' ) | (enumLiteral_8= 'div' ) | (enumLiteral_9= 'and' ) | (enumLiteral_10= 'neq' ) | (enumLiteral_11= 'or' ) | (enumLiteral_12= 'not' ) )
+            int alt19=13;
             switch ( input.LA(1) ) {
+            case 35:
+                {
+                alt19=1;
+                }
+                break;
+            case 36:
+                {
+                alt19=2;
+                }
+                break;
+            case 37:
+                {
+                alt19=3;
+                }
+                break;
+            case 38:
+                {
+                alt19=4;
+                }
+                break;
             case 39:
                 {
-                alt21=1;
+                alt19=5;
                 }
                 break;
             case 40:
                 {
-                alt21=2;
+                alt19=6;
                 }
                 break;
             case 41:
                 {
-                alt21=3;
+                alt19=7;
                 }
                 break;
             case 42:
                 {
-                alt21=4;
+                alt19=8;
                 }
                 break;
             case 43:
                 {
-                alt21=5;
+                alt19=9;
                 }
                 break;
             case 44:
                 {
-                alt21=6;
+                alt19=10;
                 }
                 break;
             case 45:
                 {
-                alt21=7;
+                alt19=11;
                 }
                 break;
             case 46:
                 {
-                alt21=8;
+                alt19=12;
                 }
                 break;
             case 47:
                 {
-                alt21=9;
-                }
-                break;
-            case 48:
-                {
-                alt21=10;
-                }
-                break;
-            case 49:
-                {
-                alt21=11;
-                }
-                break;
-            case 50:
-                {
-                alt21=12;
-                }
-                break;
-            case 51:
-                {
-                alt21=13;
+                alt19=13;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt21) {
+            switch (alt19) {
                 case 1 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:2: (enumLiteral_0= 'add' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1361:2: (enumLiteral_0= 'add' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:2: (enumLiteral_0= 'add' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:4: enumLiteral_0= 'add'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1361:2: (enumLiteral_0= 'add' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1361:4: enumLiteral_0= 'add'
                     {
-                    enumLiteral_0=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleOperator3210); 
+                    enumLiteral_0=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleOperator3052); 
 
                             current = grammarAccess.getOperatorAccess().getAddEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getAddEnumLiteralDeclaration_0()); 
@@ -3744,12 +3589,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1439:6: (enumLiteral_1= 'sub' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1367:6: (enumLiteral_1= 'sub' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1439:6: (enumLiteral_1= 'sub' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1439:8: enumLiteral_1= 'sub'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1367:6: (enumLiteral_1= 'sub' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1367:8: enumLiteral_1= 'sub'
                     {
-                    enumLiteral_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperator3227); 
+                    enumLiteral_1=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleOperator3069); 
 
                             current = grammarAccess.getOperatorAccess().getSubEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getSubEnumLiteralDeclaration_1()); 
@@ -3761,12 +3606,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1445:6: (enumLiteral_2= 'eq' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1373:6: (enumLiteral_2= 'eq' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1445:6: (enumLiteral_2= 'eq' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1445:8: enumLiteral_2= 'eq'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1373:6: (enumLiteral_2= 'eq' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1373:8: enumLiteral_2= 'eq'
                     {
-                    enumLiteral_2=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperator3244); 
+                    enumLiteral_2=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleOperator3086); 
 
                             current = grammarAccess.getOperatorAccess().getEqEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getEqEnumLiteralDeclaration_2()); 
@@ -3778,12 +3623,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1451:6: (enumLiteral_3= 'mul' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1379:6: (enumLiteral_3= 'mul' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1451:6: (enumLiteral_3= 'mul' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1451:8: enumLiteral_3= 'mul'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1379:6: (enumLiteral_3= 'mul' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1379:8: enumLiteral_3= 'mul'
                     {
-                    enumLiteral_3=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleOperator3261); 
+                    enumLiteral_3=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleOperator3103); 
 
                             current = grammarAccess.getOperatorAccess().getMulEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getOperatorAccess().getMulEnumLiteralDeclaration_3()); 
@@ -3795,12 +3640,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1457:6: (enumLiteral_4= 'gt' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1385:6: (enumLiteral_4= 'gt' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1457:6: (enumLiteral_4= 'gt' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1457:8: enumLiteral_4= 'gt'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1385:6: (enumLiteral_4= 'gt' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1385:8: enumLiteral_4= 'gt'
                     {
-                    enumLiteral_4=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleOperator3278); 
+                    enumLiteral_4=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleOperator3120); 
 
                             current = grammarAccess.getOperatorAccess().getGtEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getOperatorAccess().getGtEnumLiteralDeclaration_4()); 
@@ -3812,12 +3657,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1463:6: (enumLiteral_5= 'lt' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1391:6: (enumLiteral_5= 'lt' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1463:6: (enumLiteral_5= 'lt' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1463:8: enumLiteral_5= 'lt'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1391:6: (enumLiteral_5= 'lt' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1391:8: enumLiteral_5= 'lt'
                     {
-                    enumLiteral_5=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleOperator3295); 
+                    enumLiteral_5=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperator3137); 
 
                             current = grammarAccess.getOperatorAccess().getLtEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getOperatorAccess().getLtEnumLiteralDeclaration_5()); 
@@ -3829,12 +3674,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1469:6: (enumLiteral_6= 'lte' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1397:6: (enumLiteral_6= 'lte' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1469:6: (enumLiteral_6= 'lte' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1469:8: enumLiteral_6= 'lte'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1397:6: (enumLiteral_6= 'lte' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1397:8: enumLiteral_6= 'lte'
                     {
-                    enumLiteral_6=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleOperator3312); 
+                    enumLiteral_6=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperator3154); 
 
                             current = grammarAccess.getOperatorAccess().getLteEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getOperatorAccess().getLteEnumLiteralDeclaration_6()); 
@@ -3846,12 +3691,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1475:6: (enumLiteral_7= 'gte' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1403:6: (enumLiteral_7= 'gte' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1475:6: (enumLiteral_7= 'gte' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1475:8: enumLiteral_7= 'gte'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1403:6: (enumLiteral_7= 'gte' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1403:8: enumLiteral_7= 'gte'
                     {
-                    enumLiteral_7=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleOperator3329); 
+                    enumLiteral_7=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleOperator3171); 
 
                             current = grammarAccess.getOperatorAccess().getGteEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_7, grammarAccess.getOperatorAccess().getGteEnumLiteralDeclaration_7()); 
@@ -3863,12 +3708,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1481:6: (enumLiteral_8= 'div' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1409:6: (enumLiteral_8= 'div' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1481:6: (enumLiteral_8= 'div' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1481:8: enumLiteral_8= 'div'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1409:6: (enumLiteral_8= 'div' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1409:8: enumLiteral_8= 'div'
                     {
-                    enumLiteral_8=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleOperator3346); 
+                    enumLiteral_8=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleOperator3188); 
 
                             current = grammarAccess.getOperatorAccess().getDivEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_8, grammarAccess.getOperatorAccess().getDivEnumLiteralDeclaration_8()); 
@@ -3880,12 +3725,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1487:6: (enumLiteral_9= 'and' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1415:6: (enumLiteral_9= 'and' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1487:6: (enumLiteral_9= 'and' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1487:8: enumLiteral_9= 'and'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1415:6: (enumLiteral_9= 'and' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1415:8: enumLiteral_9= 'and'
                     {
-                    enumLiteral_9=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleOperator3363); 
+                    enumLiteral_9=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleOperator3205); 
 
                             current = grammarAccess.getOperatorAccess().getAndEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_9, grammarAccess.getOperatorAccess().getAndEnumLiteralDeclaration_9()); 
@@ -3897,12 +3742,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1493:6: (enumLiteral_10= 'neq' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1421:6: (enumLiteral_10= 'neq' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1493:6: (enumLiteral_10= 'neq' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1493:8: enumLiteral_10= 'neq'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1421:6: (enumLiteral_10= 'neq' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1421:8: enumLiteral_10= 'neq'
                     {
-                    enumLiteral_10=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleOperator3380); 
+                    enumLiteral_10=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleOperator3222); 
 
                             current = grammarAccess.getOperatorAccess().getNeqEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_10, grammarAccess.getOperatorAccess().getNeqEnumLiteralDeclaration_10()); 
@@ -3914,12 +3759,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1499:6: (enumLiteral_11= 'or' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1427:6: (enumLiteral_11= 'or' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1499:6: (enumLiteral_11= 'or' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1499:8: enumLiteral_11= 'or'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1427:6: (enumLiteral_11= 'or' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1427:8: enumLiteral_11= 'or'
                     {
-                    enumLiteral_11=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleOperator3397); 
+                    enumLiteral_11=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleOperator3239); 
 
                             current = grammarAccess.getOperatorAccess().getOrEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_11, grammarAccess.getOperatorAccess().getOrEnumLiteralDeclaration_11()); 
@@ -3931,12 +3776,12 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1505:6: (enumLiteral_12= 'not' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:6: (enumLiteral_12= 'not' )
                     {
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1505:6: (enumLiteral_12= 'not' )
-                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1505:8: enumLiteral_12= 'not'
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:6: (enumLiteral_12= 'not' )
+                    // ../org.xtext.StateMachine.sm/src-gen/org/xtext/StateMachine/sm/parser/antlr/internal/InternalSM.g:1433:8: enumLiteral_12= 'not'
                     {
-                    enumLiteral_12=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleOperator3414); 
+                    enumLiteral_12=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleOperator3256); 
 
                             current = grammarAccess.getOperatorAccess().getNotEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_12, grammarAccess.getOperatorAccess().getNotEnumLiteralDeclaration_12()); 
@@ -4048,78 +3893,67 @@ public class InternalSMParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleAssignment_in_entryRuleAssignment1815 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAssignment1825 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_ruleAssignment1873 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_27_in_ruleAssignment1885 = new BitSet(new long[]{0x0000000A100C0040L});
+        public static final BitSet FOLLOW_27_in_ruleAssignment1885 = new BitSet(new long[]{0x00000000900C0070L});
         public static final BitSet FOLLOW_ruleExpressionElement_in_ruleAssignment1906 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression1942 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleExpression1952 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleExpression1989 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleExpression2001 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleExpression2013 = new BitSet(new long[]{0x000FFF8000000000L});
-        public static final BitSet FOLLOW_ruleOperator_in_ruleExpression2034 = new BitSet(new long[]{0x00000000C0000000L});
-        public static final BitSet FOLLOW_30_in_ruleExpression2047 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleExpression2068 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_31_in_ruleExpression2082 = new BitSet(new long[]{0x0000000A100C0040L});
-        public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression2103 = new BitSet(new long[]{0x0000000100000000L});
-        public static final BitSet FOLLOW_32_in_ruleExpression2115 = new BitSet(new long[]{0x0000000A100C0040L});
-        public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression2136 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleExpression2148 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBooleanData_in_entryRuleBooleanData2184 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBooleanData2194 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEBoolean_in_ruleBooleanData2239 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIntegerData_in_entryRuleIntegerData2274 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIntegerData2284 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleIntegerData2329 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference2364 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference2374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleVariableReference2411 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleVariableReference2423 = new BitSet(new long[]{0x0000000440000000L});
-        public static final BitSet FOLLOW_30_in_ruleVariableReference2436 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleVariableReference2457 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleVariableReference2471 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleVariableReference2494 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleVariableReference2506 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt2543 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt2554 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_ruleEInt2593 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt2610 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCompositeState_Impl_in_entryRuleCompositeState_Impl2655 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCompositeState_Impl2665 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleCompositeState_Impl2702 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleCompositeState_Impl2723 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleCompositeState_Impl2735 = new BitSet(new long[]{0x0000000000200800L});
-        public static final BitSet FOLLOW_ruleState_in_ruleCompositeState_Impl2756 = new BitSet(new long[]{0x0000000000610800L});
-        public static final BitSet FOLLOW_22_in_ruleCompositeState_Impl2770 = new BitSet(new long[]{0x0000000000011000L});
-        public static final BitSet FOLLOW_ruleOperation_in_ruleCompositeState_Impl2791 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleCompositeState_Impl2805 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleInitialState_in_ruleCompositeState_Impl2826 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleCompositeState_Impl2838 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBooleanVariable_in_entryRuleBooleanVariable2874 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBooleanVariable2884 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleBooleanVariable2939 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_36_in_ruleBooleanVariable2951 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_37_in_ruleBooleanVariable2963 = new BitSet(new long[]{0x0000000008000002L});
-        public static final BitSet FOLLOW_27_in_ruleBooleanVariable2976 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_ruleBooleanData_in_ruleBooleanVariable2997 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIntegerVariable_in_entryRuleIntegerVariable3035 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIntegerVariable3045 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleIntegerVariable3100 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_36_in_ruleIntegerVariable3112 = new BitSet(new long[]{0x0000004000000000L});
-        public static final BitSet FOLLOW_38_in_ruleIntegerVariable3124 = new BitSet(new long[]{0x0000000008000002L});
-        public static final BitSet FOLLOW_27_in_ruleIntegerVariable3137 = new BitSet(new long[]{0x0000000800000040L});
-        public static final BitSet FOLLOW_ruleIntegerData_in_ruleIntegerVariable3158 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_ruleOperator3210 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleOperator3227 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleOperator3244 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleOperator3261 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_ruleOperator3278 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleOperator3295 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleOperator3312 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleOperator3329 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleOperator3346 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleOperator3363 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleOperator3380 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleOperator3397 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleOperator3414 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleExpression1989 = new BitSet(new long[]{0x00000000900C0070L});
+        public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression2010 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_29_in_ruleExpression2022 = new BitSet(new long[]{0x0000FFF800000000L});
+        public static final BitSet FOLLOW_ruleOperator_in_ruleExpression2043 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_30_in_ruleExpression2055 = new BitSet(new long[]{0x00000000900C0070L});
+        public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression2076 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBooleanData_in_entryRuleBooleanData2112 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleBooleanData2122 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEBoolean_in_ruleBooleanData2167 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIntegerData_in_entryRuleIntegerData2202 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIntegerData2212 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleIntegerData2257 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference2292 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference2302 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleVariableReference2349 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt2385 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt2396 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleEInt2435 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt2452 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCompositeState_Impl_in_entryRuleCompositeState_Impl2497 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCompositeState_Impl2507 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_ruleCompositeState_Impl2544 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleCompositeState_Impl2565 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleCompositeState_Impl2577 = new BitSet(new long[]{0x0000000000200800L});
+        public static final BitSet FOLLOW_ruleState_in_ruleCompositeState_Impl2598 = new BitSet(new long[]{0x0000000000610800L});
+        public static final BitSet FOLLOW_22_in_ruleCompositeState_Impl2612 = new BitSet(new long[]{0x0000000000011000L});
+        public static final BitSet FOLLOW_ruleOperation_in_ruleCompositeState_Impl2633 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_ruleCompositeState_Impl2647 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleInitialState_in_ruleCompositeState_Impl2668 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleCompositeState_Impl2680 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBooleanVariable_in_entryRuleBooleanVariable2716 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleBooleanVariable2726 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleBooleanVariable2781 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_32_in_ruleBooleanVariable2793 = new BitSet(new long[]{0x0000000200000000L});
+        public static final BitSet FOLLOW_33_in_ruleBooleanVariable2805 = new BitSet(new long[]{0x0000000008000002L});
+        public static final BitSet FOLLOW_27_in_ruleBooleanVariable2818 = new BitSet(new long[]{0x00000000000C0000L});
+        public static final BitSet FOLLOW_ruleBooleanData_in_ruleBooleanVariable2839 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIntegerVariable_in_entryRuleIntegerVariable2877 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIntegerVariable2887 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleIntegerVariable2942 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_32_in_ruleIntegerVariable2954 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleIntegerVariable2966 = new BitSet(new long[]{0x0000000008000002L});
+        public static final BitSet FOLLOW_27_in_ruleIntegerVariable2979 = new BitSet(new long[]{0x0000000080000040L});
+        public static final BitSet FOLLOW_ruleIntegerData_in_ruleIntegerVariable3000 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_ruleOperator3052 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_ruleOperator3069 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleOperator3086 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleOperator3103 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_ruleOperator3120 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleOperator3137 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleOperator3154 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleOperator3171 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleOperator3188 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_ruleOperator3205 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_ruleOperator3222 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleOperator3239 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleOperator3256 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

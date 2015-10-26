@@ -149,7 +149,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (operator=Operator _name=EString? left=ExpressionElement right=ExpressionElement)
+	 *     (left=ExpressionElement operator=Operator right=ExpressionElement)
 	 */
 	protected void sequence_Expression(EObject context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -243,7 +243,7 @@ public abstract class AbstractSMSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (_name=EString? variable=[Variable|EString])
+	 *     variable=[Variable|EString]
 	 */
 	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

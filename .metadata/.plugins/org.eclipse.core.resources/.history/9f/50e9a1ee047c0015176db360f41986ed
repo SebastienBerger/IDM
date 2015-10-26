@@ -13,6 +13,12 @@ StateMachine returns StateMachine:
 		(states+= State)+
 		'init with' initialState=InitialState
 		(transitions+=Transition)+
+		/*('operation' operation=Operation)?
+		'states' '{' states+=State ( "," states+=State)* '}' 
+		'initialState' initialState=InitialState
+		'transitions' '{' transitions+=Transition ( "," transitions+=Transition)* '}' 
+		'events' '{' events+=Event ( "," events+=Event)* '}' 
+		('variables' '{' variables+=Variable ( "," variables+=Variable)* '}' )?*/
 	'}';
 
 
@@ -67,9 +73,13 @@ Assignment returns Assignment:
 	variable=[Variable|EString] ':=' expression=ExpressionElement;
 
 Expression returns Expression:
-	'left' left=ExpressionElement
-		'op' operator=Operator
-		'right' right=ExpressionElement;
+	'Expression'
+	'{'
+		'operator' operator=Operator
+		('_name' _name=EString)?
+		'left' left=ExpressionElement
+		'right' right=ExpressionElement
+	'}';
 
 BooleanData returns BooleanData:
 	value=EBoolean;
@@ -78,7 +88,11 @@ IntegerData returns IntegerData:
 	value=EInt;
 
 VariableReference returns VariableReference:
-	variable=[Variable|EString];
+	'VariableReference'
+	'{'
+		('_name' _name=EString)?
+		'variable' variable=[Variable|EString]
+	'}';
 
 enum Operator returns Operator:
 				add = 'add' | sub = 'sub' | eq = 'eq' | mul = 'mul' | gt = 'gt' | lt = 'lt' | lte = 'lte' | gte = 'gte' | div = 'div' | and = 'and' | neq = 'neq' | or = 'or' | not = 'not';
