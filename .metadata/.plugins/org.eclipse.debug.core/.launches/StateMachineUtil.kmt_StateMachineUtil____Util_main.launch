@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.kermeta.debug.runConfiguration">
+<stringAttribute key="fr.irisa.triskell.kermeta.launching.KM_CLASSQNAME" value="StateMachineUtil::Util"/>
+<stringAttribute key="fr.irisa.triskell.kermeta.launching.KM_FILENAME" value="/StateMachine/transfos/StateMachineUtil.kmt"/>
+<stringAttribute key="fr.irisa.triskell.kermeta.launching.KM_OPERATIONNAME" value="main"/>
+<stringAttribute key="fr.irisa.triskell.kermeta.launching.KM_PROJECTNAME" value="StateMachine"/>
+<stringAttribute key="org.kermeta.debug.DEFAULT_PATH" value="/StateMachine/transfos"/>
+<stringAttribute key="process_factory_id" value="org.kermeta.debug.processFactory"/>
+</launchConfiguration>

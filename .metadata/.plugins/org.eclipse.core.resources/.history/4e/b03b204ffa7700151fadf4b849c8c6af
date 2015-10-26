@@ -1,0 +1,173 @@
+/* $Id:$ 
+ * Creation : October 19, 2015
+ * Licence  : EPL 
+ * Copyright:
+ * Authors  : 
+ *            berger
+ */
+@mainClass "transfos::Main"
+@mainOperation "main"
+
+
+package transfos;
+
+require kermeta
+require "platform:/resource/StateMachine/metaModels/StateMachine.ecore"
+require "platform:/resource/StateMachine/transfos/WriteFile.kmt"
+require "platform:/resource/StateMachine/transfos/ManageStateMachine.kmt"
+
+using kermeta::io 
+using kermeta::standard
+using kermeta::persistence
+using SimplStateMachine
+
+class Main
+{
+	attribute _file : WriteFile
+	attribute _manager : ManageStateMachine
+    
+    operation loadModel(fileName : String) : StateMachine is do
+		var repository : EMFRepository init EMFRepository.new
+ 		var resource : EMFResource 
+ 		resource ?= repository.createResource(fileName, "platform:/resource/StateMachine/metaModels/StateMachine.ecore")
+
+		resource.load
+		var sm : StateMachine
+		sm ?= resource.one
+		
+		result := sm
+	end
+	
+	
+	/* creation du fichier java */
+	operation createJavaFile(fileName : String) is do
+	stdio.writeln(_manager.getNameSM())
+		_file := WriteFile.new.initialize("platform:/resource/StateMachine/src/" + _manager.getNameSM() + "Java.java")
+
+		_file.write("import com.pauware.pauware_engine._Core.*;\n"+
+					"import com.pauware.pauware_engine._Exception.*;\n"+
+					"import com.pauware.pauware_engine._Java_EE.*;\n"+
+					"import java.util.Scanner;")
+		_file.write("\n"+ "public class "+_file.getNameFile()+" {\n" )
+
+		_file.writeIndent(1,"AbstractStatechart_monitor _"+_manager.getNameSM()+";" )
+		declarationState()
+		
+		init_structure()
+		
+		init_behavior()
+		
+	end
+	
+	/* fonction init_structure vide */
+	operation init_structure() is do
+		_file.writelnIndent(1,"private void init_structure() throws Statechart_exception {" )
+		_file.writeIndent(2,"// votre code d'initialisation de structure" )
+		_file.writeIndent(1,"}" )
+	end
+	
+	operation init_behavior() is do
+		_file.writelnIndent(1,"private void init_behavior() throws Statechart_exception {")
+		var mesEtats : OrderedSet<State> init OrderedSet<State>.new
+		var mesEtatsComposite : OrderedSet<State> init OrderedSet<State>.new
+		mesEtats := _manager.getAllState()
+		mesEtats.each{etat |
+			if(CompositeState.isInstance(etat)) then
+				mesEtatsComposite.add(etat)
+			else
+				_file.writelnIndent(2,"_"+etat.name+" = new Statechart(\""+etat.name+"\");")
+			end
+			if(_manager.haveActivityState(etat)) then 
+				_file.writeIndent(2,"_"+etat.name+".doActivity(this, \""+_manager.getNameActivityState(etat)+"\");")
+			end
+		}
+		_file.writelnIndent(2,"_"+_manager.getNameInitialState()+".inputState();")
+		mesEtatsComposite.each{etat |
+			_file.writeIndent(2,"_"+_manager.getNameInput(etat)+".inputState();")
+		}
+		var monitor : String init "_"+_manager.getNameSM()+" = new Statechart_monitor"
+		_manager.getSM().states.each{s |monitor:= monitor + "(_"+s.name+".xor"}
+		monitor := monitor.substring(0,monitor.size-4)
+		_manager.getSM().states.each{s |monitor:= monitor + ")"}
+		monitor := monitor.substring(0,monitor.size-1)
+		monitor := monitor +", \""+_manager.getNameSM()+"\", AbstractStatechart_monitor.Show_on_system_out, null);"
+		_file.writeIndent(2,createXorString(_manager.getSM().states))
+		_file.writeIndent(1,"}")
+	end
+	operation createXorString(state : OrderedSet<State>) : String is do
+		var monitor : String init "_"+_manager.getNameSM()+" = new Statechart_monitor"
+		state.states.each{s |monitor:= monitor + "(_"+s.name+".xor"}
+		result := ""
+	end
+	/* fonction init_behavior */
+	/*operation init_behavior(sm : StateMachine) is do
+		sm.states.each{s |behavior(s)}
+		file.writeTextFile(path,file.readTextFile(path)+"\n"+pushIndent()+pushIndent()+"_"+sm.initialState.referencedState.name+".inputState();")
+		var monitor : String init "_"+sm.name+" = new Statechart_monitor"
+		sm.states.each{s |monitor:= monitor + "(_"+s.name+".xor"}
+		monitor := monitor.substring(0,monitor.size-4)
+		sm.states.each{s |monitor:= monitor + ")"}
+		monitor := monitor.substring(0,monitor.size-1)
+		monitor := monitor +", \""+sm.name+"\", AbstractStatechart_monitor.Show_on_system_out, null);"
+		file.writeTextFile(path,file.readTextFile(path)+"\n"+pushIndent()+pushIndent()+monitor)
+		file.writeTextFile(path,file.readTextFile(path)+pushIndent()+"}")
+	end*/
+	/*operation behavior(s : State) is do
+			if(CompositeState.isInstance(s)) then
+			var ch : Sequence<String> init Sequence<String>.new
+			var chXor : String init ""
+    		var compState : CompositeState
+    		compState ?=s
+    		compState.states.each{state| ch.add("_"+state.name) }
+    		ch.each{etat | chXor := chXor + "(_"+etat+".xor" }
+    		chXor := chXor.substring(0,chXor.size()-4)
+    		ch.each{etat | chXor := chXor + ")" }
+    		compState.states.each{state|
+    			if(CompositeState.isInstance(state)) then
+    				behavior(state)
+    			else
+    				file.writeTextFile(path,file.readTextFile(path)+pushIndent()+pushIndent()+"_"+state.name+" = new Statechart("+"\""+state.name+"\");")
+    				if(state.~operation != void) then
+    					file.writeTextFile(path,file.readTextFile(path)+pushIndent()+pushIndent()+"_"+state.name+".doActivity(this,\""+state.name+"Activity\");")
+					end
+				end
+    		}
+    		file.writeTextFile(path,file.readTextFile(path)+"\n"+pushIndent()+pushIndent()+"_"+compState.initialState.referencedState.name+".inputState();")
+    		file.writeTextFile(path,file.readTextFile(path)+"\n"+pushIndent()+pushIndent()+"_"+compState.name+" = "+chXor+".name(\""+compState.name+"\");")
+		else
+			file.writeTextFile(path,file.readTextFile(path)+pushIndent()+pushIndent()+"_"+s.name+" = new Statechart("+"\""+s.name+"\");")
+		end
+	end*/
+	
+	/* déclaration des variables locales */
+    operation declarationState() is do
+    	var variable : Sequence<String> init _manager.getAllNameState()
+    	variable.each{ stateName | _file.writeIndent(1,"AbstractStatechart _"+stateName)}
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	operation main() : Void is do 
+		var fileName : String init "platform:/resource/StateMachine"
+		var dirName : String
+		var modelName : String
+		
+		dirName := stdio.read("Directory of the model? [default=models] ")
+		if (dirName == "") then dirName := "models" end	
+		modelName := "Voiture.xmi"//stdio.read("Name of the model file? ")
+		fileName := fileName + "/" + dirName + "/" + modelName
+		_manager := ManageStateMachine.new.initialize(loadModel(fileName))
+		stdio.writeln("\n === State machine loaded ===\n")
+		createJavaFile(fileName)
+		
+	end
+}

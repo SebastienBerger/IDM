@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kpm:KPM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpm="http://www.kermeta.org/kpm">
+  <filters xsi:type="kpm:NameFilter" regex="*.kmt"/>
+  <filters xsi:type="kpm:NameFilter" regex="*.km"/>
+  <filters xsi:type="kpm:NameFilter" regex="*.ecore"/>
+  <rules event="//@events.0" name="Update KMT Files">
+    <outs extensionPoint="org.kermeta.kpm.actions.unloadcontext"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.loadcontext"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.typecheckcontext"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.removedependencies"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.createdependencies"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.addmarkers"/>
+    <outs extensionPoint="org.kermeta.kpm.actions.finalizeUpdate"/>
+    <precondition xsi:type="kpm:FilterExpression" filter="//@filters.0"/>
+  </rules>
+  <events name="update"/>
+  <unitGroups name="platform:/resource/StateMachine">
+    <units rules="//@rules.0" name="platform:/resource/StateMachine/transfos/StateMachineUtil.kmt" lastTimeModified="2015-10-13T18:05:51.000+0200"/>
+    <units rules="//@rules.0" name="platform:/resource/StateMachine/transfos/StateMachineJava.kmt" lastTimeModified="2015-10-23T19:11:38.000+0200">
+      <usedUsages usedUnit="//@unitGroups.0/@units.2" type="require"/>
+      <usedUsages usedUnit="//@unitGroups.0/@units.3" type="require"/>
+    </units>
+    <units rules="//@rules.0" name="platform:/resource/StateMachine/transfos/WriteFile.kmt" lastTimeModified="2015-10-26T12:46:50.000+0100" usedBy="//@unitGroups.0/@units.1/@usedUsages.0"/>
+    <units rules="//@rules.0" name="platform:/resource/StateMachine/transfos/ManageStateMachine.kmt" lastTimeModified="2015-10-23T16:45:13.000+0200" usedBy="//@unitGroups.0/@units.1/@usedUsages.1"/>
+  </unitGroups>
+  <unitGroups name="platform:/resource/StateMachine_s">
+    <units rules="//@rules.0" name="platform:/resource/StateMachine_s/transfos/WriteFile.kmt" lastTimeModified="2015-10-26T15:14:02.635+0100"/>
+    <units rules="//@rules.0" name="platform:/resource/StateMachine_s/transfos/StateMachineUtil.kmt" lastTimeModified="2015-10-26T15:14:02.635+0100"/>
+    <units rules="//@rules.0" name="platform:/resource/StateMachine_s/transfos/StateMachineJava.kmt" lastTimeModified="2015-10-26T15:14:02.635+0100"/>
+  </unitGroups>
+</kpm:KPM>

@@ -1,0 +1,59 @@
+/* $Id:$ 
+ * Creation : October 21, 2015
+ * Licence  : EPL 
+ * Copyright:
+ * Authors  : 
+ *            berger
+ */
+
+
+package transfos;
+require kermeta
+using kermeta::io 
+using kermeta::standard
+
+class WriteFile
+{
+	attribute file : FileIO 
+	attribute path : String
+	attribute nameFile : String
+	
+	operation initialize(p : String) : WriteFile is do 
+		path := renameState(p)
+		nameFile := path.split("/").last.split("\\.").first
+		file := FileIO.new
+		file.writeTextFile(path,"")
+		result := self
+	end
+	
+		
+	/* *********************** */
+	operation renameState(smName : String) : String is do
+		var tabString : Sequence<String> init smName.split(" ")
+		var nom : String init ""
+		tabString.each{ x | String
+			
+			nom.append(x)
+		}
+		result := nom
+	end
+	
+	operation getNameFile() : String is do
+		result := nameFile
+	end
+	
+	operation pushIndent(): String is do
+    	result := "    "
+    end
+    
+	
+	operation write(contain : String) is do
+		file.writeTextFile(path,file.readTextFile(path)+contain)
+	end
+	
+	operation writeIndent(nbIndent : Integer, contain : String) is do
+		var indent : String init ""
+		nbIndent.times{t|indent := indent + pushIndent()}
+		file.writeTextFile(path,file.readTextFile(path)+indent+contain)
+	end
+}

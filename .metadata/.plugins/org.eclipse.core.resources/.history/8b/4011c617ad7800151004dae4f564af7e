@@ -1,0 +1,253 @@
+/* $Id:$ 
+ * Creation : October 21, 2015
+ * Licence  : EPL 
+ * Copyright:
+ * Authors  : 
+ *            berger
+ */
+
+
+package transfos;
+
+
+require kermeta
+require "platform:/resource/StateMachine/metaModels/StateMachine.ecore"
+
+using kermeta::standard
+using kermeta::io 
+using SimplStateMachine
+
+class ManageStateMachine
+{
+	attribute _sm : StateMachine
+	attribute _states : OrderedSet<State>
+	
+	operation initialize(sm : StateMachine) : ManageStateMachine is do 
+		_sm := sm
+		_sm.name := renameState(_sm.name)
+		_states := OrderedSet<State>.new
+		_sm.states.each{s | recoverAllState(s)}
+		
+		var tmpState : Sequence<String> init Sequence<String>.new
+		_states.each{s | tmpState.add(s.name)}
+		var i : Integer init 0
+		_states.each{s |	
+			if(tmpState.size() >0) then
+				tmpState.removeAt(0)
+			end
+			s.name := renameState(s.name)
+			if(tmpState.contains(s.name)) then
+				i := i + 1
+				s.name := s.name + i.toString
+			end
+		}
+		result := self
+	end
+	operation renameState(smName : String) : String is do
+		var tabString : Sequence<String> init smName.split(" ")
+		var nom : String init ""
+		tabString.each{ x | String
+			
+			nom.append(x)
+		}
+		result := nom
+	end
+	operation getNameSM() : String is do
+		result := _sm.name
+	end
+	operation getSM() : StateMachine is do
+		result := _sm
+	end
+	operation getAllNameState() : Sequence<String> is do
+		var tmpStateName : Sequence<String> init Sequence<String>.new
+		_states.each{s | tmpStateName.add(s.name)}
+		result := tmpStateName
+	end
+	operation getAllState() : OrderedSet<State> is do
+		result := _states
+	end
+	operation getNameActivityState(s :State) : String is do
+		var ch : String init ""
+		if(s.~operation != void) then
+			ch := s.name+"Activity"
+		end
+		result :=ch
+	end
+	operation getNameInitialState() : String is do
+		result := _sm.initialState.referencedState.name
+	end
+	operation getNameInput(s :State) : String is do
+		var compState : CompositeState
+    	compState ?=s
+		result := compState.initialState.referencedState.name
+	end
+	operation getAllTransition() : OrderedSet<Transition> is do
+		var seqTrans : OrderedSet<Transition> init OrderedSet<Transition>.new
+		_sm.transitions.each{t|seqTrans.add(t)}
+		result := seqTrans
+	end
+	operation getNameGuard() : OrderedSet<String> is do
+		var seqTrans : OrderedSet<Transition> init getAllTransition()
+		var gardes : OrderedSet<String> init OrderedSet<String>.new
+		seqTrans.each{t | 
+			if(haveGuard(t)) then
+				gardes.add(assignNameGuard(t.guard,""))
+			end
+		}
+		result := gardes
+	end
+	operation getNameEvent() : OrderedSet<String> is do
+		var seqTrans : OrderedSet<Transition> init getAllTransition()
+		var evt : OrderedSet<String> init OrderedSet<String>.new
+		_sm.events.each{t | 
+				evt.add(t.name)
+		}
+		result := evt
+	end
+	operation getVariable() : OrderedSet<Variable> is do 
+		result := _sm.variables
+	end
+	operation getTypeVariable(v : Variable) : String is do 
+		var res : String
+		if(BooleanVariable.isInstance(v)) then
+			res := "boolean"
+		else if(IntegerVariable.isInstance(v)) then
+			res := "int"
+			end
+		end
+		result := res
+	end
+	operation haveVariables() : Boolean is do
+		var compteur : Integer init 0 
+		_sm.variables.each{ v |
+			compteur := compteur + 1
+		}
+		if(compteur > 0) then
+			result := true
+		else
+			result := false
+		end
+	end
+	operation haveActivityState(s :State) : Boolean is do
+		if(s.~operation != void) then
+			result := true
+		else 
+			result := false
+		end
+	end
+	operation haveGuard(t : Transition) : Boolean is do
+		if(t.guard!= void) then 
+			result := true
+		else
+			result := false
+		end
+	end
+
+	
+	operation recoverAllState(s : State) is do
+    	_states.add(s)
+    	if(CompositeState.isInstance(s)) then
+    		var compState : CompositeState
+    		compState ?=s
+    		compState.states.each{state|
+    			if(CompositeState.isInstance(state)) then
+    				recoverAllState(state)
+    			else
+    				_states.add(state)
+				end
+    		}
+		end
+    end
+    operation assignNameGuardRec(garde : ExpressionElement, s : String) : String is do
+    	var nomGarde : String init s
+				if(VariableReference.isInstance(garde)) then
+					var castGarde : VariableReference
+					castGarde ?= garde
+					nomGarde := castGarde.~variable.name
+				else if(BooleanData.isInstance(garde)) then
+						var castGarde : BooleanData
+						castGarde ?= garde		
+						nomGarde := castGarde.~value.toString
+					else if(IntegerData.isInstance(garde)) then
+						var castGarde : IntegerData
+						castGarde ?= garde		
+						nomGarde := castGarde.~value.toString	
+						else if(Expression.isInstance(garde)) then
+							
+							end					
+						end	
+					end
+				end
+    	
+    	result := nomGarde
+    end
+    operation assignNameGuard(exp : Expression, s : String) : String is do 
+    	var garde : String init s
+    	if(Expression.isInstance(exp.left)) then
+    		var castGarde : Expression
+			castGarde ?= exp.left
+    		garde := assignNameGuard(castGarde, garde) +"_"+ exp.~operator.name+"_"
+		else
+			garde := garde + assignNameGuardRec(exp.left,"") +"_"+exp.~operator.name
+    	end
+    	if(Expression.isInstance(exp.right)) then
+    		var castGarde : Expression
+			castGarde ?= exp.right
+    		garde := assignNameGuard(castGarde, garde)
+    	else
+			garde := garde +"_"+ assignNameGuardRec(exp.right,"")
+		end
+		result := garde
+	end
+	operation assignOperationExpressionRec(garde : ExpressionElement, s : String) : String is do
+    	var nomGarde : String init s
+				if(VariableReference.isInstance(garde)) then
+					var castGarde : VariableReference
+					castGarde ?= garde
+					nomGarde := castGarde.~variable.name
+				else if(BooleanData.isInstance(garde)) then
+						var castGarde : BooleanData
+						castGarde ?= garde		
+						nomGarde := castGarde.~value.toString
+					else if(IntegerData.isInstance(garde)) then
+						var castGarde : IntegerData
+						castGarde ?= garde		
+						nomGarde := castGarde.~value.toString	
+						else if(Expression.isInstance(garde)) then
+							
+							end					
+						end	
+					end
+				end
+    	
+    	result := nomGarde
+    end
+    operation assignOperationExpression(exp : Expression, s : String) : String is do 
+    	var garde : String init s
+    	if(Expression.isInstance(exp.left)) then
+    		var castGarde : Expression
+			castGarde ?= exp.left
+    		garde := assignNameGuard(castGarde, garde) +"_"+ exp.~operator.name+"_"
+		else
+			garde := garde + assignNameGuardRec(exp.left,"") +"_"+exp.~operator.name
+    	end
+    	if(Expression.isInstance(exp.right)) then
+    		var castGarde : Expression
+			castGarde ?= exp.right
+    		garde := assignNameGuard(castGarde, garde)
+    	else
+			garde := garde +"_"+ assignNameGuardRec(exp.right,"")
+		end
+		result := garde
+	end
+    /*operation castGuard(garde : Expression) : ExpressionElement is do
+				if(VariableReference.isInstance(garde.left)) then
+					var varLeft : ExpressionElement init _manager.castGuard()
+					varLeft ?= t.guard.left
+				end
+				else if(Date.isInstance(t.guard.left)) then
+					var varLeft : VariableReference
+					varLeft ?= t.guard.left	
+	end*/
+
+}

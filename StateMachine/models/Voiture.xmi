@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SimplStateMachine:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:SimplStateMachine="platform:/resource/StateMachine/metaModels/StateMachine.ecore"
+    name="Voiture">
+  <states name="Arret">
+    <operation>
+      <contents
+          variable="//@variables.0"
+          _name="vitesse := 0">
+        <expression
+            xsi:type="SimplStateMachine:IntegerData"/>
+      </contents>
+    </operation>
+  </states>
+  <states xsi:type="SimplStateMachine:CompositeState"
+      name="Marche">
+    <states
+        name="MoinsVite">
+      <operation>
+        <contents
+            variable="//@variables.0"
+            _name="vitesse -=10">
+          <expression
+              xsi:type="SimplStateMachine:Expression"
+              operator="sub"
+              _name="-">
+            <left
+                xsi:type="SimplStateMachine:VariableReference"
+                variable="//@variables.0"
+                _name="vitesse"/>
+            <right
+                xsi:type="SimplStateMachine:IntegerData"
+                value="10"/>
+          </expression>
+        </contents>
+      </operation>
+    </states>
+    <states
+        name="PlusVite">
+      <operation>
+        <contents
+            variable="//@variables.0"
+            _name="vitesse += 10">
+          <expression
+              xsi:type="SimplStateMachine:Expression"
+              _name="+">
+            <left
+                xsi:type="SimplStateMachine:VariableReference"
+                variable="//@variables.0"
+                _name="vitesse"/>
+            <right
+                xsi:type="SimplStateMachine:IntegerData"
+                value="10"/>
+          </expression>
+        </contents>
+      </operation>
+    </states>
+    <states
+        name="Maximum">
+      <operation>
+        <contents
+            variable="//@variables.0"
+            _name="vitesse := 100">
+          <expression
+              xsi:type="SimplStateMachine:IntegerData"
+              value="100"/>
+        </contents>
+        <contents
+            variable="//@variables.1"
+            _name="maxAtteint := true">
+          <expression
+              xsi:type="SimplStateMachine:BooleanData"
+              value="true"/>
+        </contents>
+      </operation>
+    </states>
+    <initialState
+        referencedState="//@states.1/@states.1"/>
+  </states>
+  <initialState
+      referencedState="//@states.0"/>
+  <transitions
+      source="//@states.0"
+      target="//@states.1"
+      event="//@events.1"/>
+  <transitions
+      source="//@states.1"
+      target="//@states.0"
+      event="//@events.0">
+    <guard operator="eq"
+        _name="vitesse = 10">
+      <left
+          xsi:type="SimplStateMachine:VariableReference"
+          variable="//@variables.0"
+          _name="vitesse"/>
+      <right
+          xsi:type="SimplStateMachine:IntegerData"
+          value="10"/>
+    </guard>
+  </transitions>
+  <transitions
+      source="//@states.1"
+      target="//@states.1/@states.1"
+      event="//@events.1">
+    <guard operator="and"
+        _name="vitesse >= 10 and vitesse &lt; 90">
+      <left
+          xsi:type="SimplStateMachine:Expression"
+          operator="gte"
+          _name="vitesse >= 10">
+        <left
+            xsi:type="SimplStateMachine:VariableReference"
+            variable="//@variables.0"
+            _name="vitesse"/>
+        <right
+            xsi:type="SimplStateMachine:IntegerData"
+            value="10"/>
+      </left>
+      <right
+          xsi:type="SimplStateMachine:Expression"
+          operator="lt"
+          _name="vitesse &lt; 90">
+        <left
+            xsi:type="SimplStateMachine:VariableReference"
+            variable="//@variables.0"
+            _name="vitesse"/>
+        <right
+            xsi:type="SimplStateMachine:IntegerData"
+            value="90"/>
+      </right>
+    </guard>
+  </transitions>
+  <transitions
+      source="//@states.1"
+      target="//@states.1/@states.2"
+      event="//@events.1">
+    <guard operator="eq"
+        _name="vitesse = 90">
+      <left
+          xsi:type="SimplStateMachine:VariableReference"
+          variable="//@variables.0"
+          _name="vitesse"/>
+      <right
+          xsi:type="SimplStateMachine:IntegerData"
+          value="90"/>
+    </guard>
+  </transitions>
+  <transitions
+      source="//@states.1"
+      target="//@states.1/@states.0"
+      event="//@events.0">
+    <guard operator="neq"
+        _name="vitesse &lt;> 10">
+      <left
+          xsi:type="SimplStateMachine:VariableReference"
+          variable="//@variables.0"
+          _name="vitesse"/>
+      <right
+          xsi:type="SimplStateMachine:IntegerData"
+          value="10"/>
+    </guard>
+  </transitions>
+  <events name="ralentir"/>
+  <events name="accelerer"/>
+  <variables
+      xsi:type="SimplStateMachine:IntegerVariable"
+      name="vitesse"/>
+  <variables
+      xsi:type="SimplStateMachine:BooleanVariable"
+      name="maxAtteint">
+    <value xsi:type="SimplStateMachine:BooleanData"/>
+  </variables>
+</SimplStateMachine:StateMachine>

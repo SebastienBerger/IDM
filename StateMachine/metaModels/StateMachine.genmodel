@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/StateMachine/src" modelPluginID="StateMachine"
+    modelName="StateMachine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>StateMachine.ecore</foreignModel>
+  <genPackages prefix="SimplStateMachine" disposableProviderFactory="true" ecorePackage="StateMachine.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StateMachine.ecore#//Operator">
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/add"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/sub"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/eq"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/mul"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/gt"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/lt"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/lte"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/gte"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/div"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/and"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/neq"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/or"/>
+      <genEnumLiterals ecoreEnumLiteral="StateMachine.ecore#//Operator/not"/>
+    </genEnums>
+    <genClasses ecoreClass="StateMachine.ecore#//StateMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//StateMachine/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//StateMachine/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//StateMachine/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//State/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference StateMachine.ecore#//State/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//State/isActive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//State/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//CompositeState">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//CompositeState/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//CompositeState/initialState"/>
+      <genOperations ecoreOperation="StateMachine.ecore#//CompositeState/activeSubTree"/>
+      <genOperations ecoreOperation="StateMachine.ecore#//CompositeState/unactiveSubTree"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//InitialState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//InitialState/referencedState"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Transition/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Transition/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//Event/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StateMachine.ecore#//ExpressionElement"/>
+    <genClasses ecoreClass="StateMachine.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Expression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Expression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//Expression/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//Expression/_name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StateMachine.ecore#//Data"/>
+    <genClasses ecoreClass="StateMachine.ecore#//BooleanData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//BooleanData/value"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//IntegerData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//IntegerData/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StateMachine.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Variable/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//BooleanVariable"/>
+    <genClasses ecoreClass="StateMachine.ecore#//IntegerVariable"/>
+    <genClasses ecoreClass="StateMachine.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Operation/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Assignment/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//Assignment/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//Assignment/_name"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachine.ecore#//VariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateMachine.ecore#//VariableReference/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachine.ecore#//VariableReference/_name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

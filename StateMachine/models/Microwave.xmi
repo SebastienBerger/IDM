@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SimplStateMachine:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimplStateMachine="platform:/resource/StateMachine/metaModels/StateMachine.ecore" name="Microwave" isActive="true">
+  <states xsi:type="SimplStateMachine:CompositeState" name="Closed" isActive="true">
+    <states name="Off" isActive="true"/>
+    <states name="Baking"/>
+    <initialState referencedState="//@states.0/@states.0"/>
+  </states>
+  <states xsi:type="SimplStateMachine:CompositeState" name="Open">
+    <states name="Paused"/>
+    <states name="Off"/>
+    <initialState referencedState="//@states.1/@states.1"/>
+  </states>
+  <initialState referencedState="//@states.0"/>
+  <transitions source="//@states.0/@states.0" target="//@states.0/@states.1" event="//@events.0"/>
+  <transitions source="//@states.0/@states.1" target="//@states.0/@states.0" event="//@events.0"/>
+  <transitions source="//@states.0" target="//@states.1" event="//@events.1"/>
+  <transitions source="//@states.0/@states.1" target="//@states.1/@states.0" event="//@events.1"/>
+  <transitions source="//@states.1" target="//@states.0" event="//@events.2"/>
+  <transitions source="//@states.1/@states.0" target="//@states.0/@states.1" event="//@events.2"/>
+  <events name="Power"/>
+  <events name="DoorOpen"/>
+  <events name="DoorClosed"/>
+</SimplStateMachine:StateMachine>

@@ -1,0 +1,164 @@
+/* $Id:$ 
+ * Creation : October 26, 2010 - Updated October 2015
+ * Licence  : EPL 
+ * Copyright:
+ * Authors  : Eric Cariou
+ */
+ 
+@mainClass "StateMachineUtil::Util"
+@mainOperation "main"
+
+package StateMachineUtil;
+
+require kermeta
+require "platform:/resource/StateMachine/metaModels/StateMachine.ecore"
+ 
+using kermeta::io
+using kermeta::standard
+using kermeta::exceptions
+using kermeta::persistence
+using SimplStateMachine
+
+/**
+ * This file contains Kermeta utility functions for manipulating (printing, loading and saving) state machine models
+ * expecting their operation and variable elements
+ */ 
+ 
+class Util
+{
+
+   /**
+	* Series of functions used for printing a model
+	*/
+	attribute indent : String
+
+    operation pushIndent() is do
+    	self.indent.append("    ")
+    end
+    
+    operation popIndent() is do
+    	if (indent != void and indent.size>0) then
+	    	indent := indent.substring(0, indent.size-4)
+	    end
+    end
+    
+    operation getFullStateName(s : State) : String is do
+    	var name : String init ""
+    	if (StateMachine.isInstance(s)) then
+    		result := ""
+    	else
+    		name := s.name
+    		if (s.container != void) then 
+    			var compState : State
+    			var compName : String
+    			compState ?= s.container
+    			compName := getFullStateName(compState)
+    			if not(compName.equals("")) then name := compName + "::" + name end 
+    		end
+    		result := name
+    	end
+    end
+   
+	operation getInitialStateName(initState : InitialState) : String is do
+		if (initState == void) then
+			result := "none !"
+		else 
+			if (initState.referencedState == void)
+			then
+				result := "none !"
+			else
+				result := getFullStateName(initState.referencedState)
+			end
+		end
+	end
+    
+	operation printState(state : State) is do
+		if (CompositeState.isInstance(state))
+		then stdio.write(indent+" Composite state : "+getFullStateName(state))
+		else stdio.write(indent+" State : "+getFullStateName(state))
+		end
+			
+		if (state.isActive == true) 
+		then stdio.writeln(" (active)")
+		else stdio.writeln("")
+		end	
+			
+		if (CompositeState.isInstance(state)) then
+			var compState : CompositeState
+			compState ?= state
+			pushIndent()
+			compState.states.each { s | printState(s) }
+			stdio.writeln(indent+" [ Initial state : "+getInitialStateName(compState.initialState) + " ]")			
+			popIndent()
+		end
+	end
+
+
+	/** 
+	 * Print on console the content of a model through its state machine element passed by parameter
+ 	 */
+	operation printModel(sm : StateMachine) is do
+		indent := ""
+		stdio.writeln(" StateMachine : "+sm.name)
+		stdio.writeln("\n -- States of the state machine --\n")
+		
+		sm.states.each { s | printState(s) }
+		stdio.writeln(" [ Initial state : "+getInitialStateName(sm.initialState) +" ]")			
+
+		stdio.writeln("\n -- Transitions of the state machine --\n")
+		sm.transitions.each { t | 
+			stdio.writeln(" From "+getFullStateName(t.source)+ " to "+getFullStateName(t.target)+" event : "+t.event.name) 
+		}	
+	end
+	
+	
+	/**
+	 * Load a state machine model stored in the XMI file which name is passed by parameter.
+	 * Return the state machine element of the model 
+	 */
+	operation loadModel(fileName : String) : StateMachine is do
+		var repository : EMFRepository init EMFRepository.new
+ 		var resource : EMFResource 
+ 		resource ?= repository.createResource(fileName, "platform:/resource/StateMachine/metaModels/StateMachine.ecore")
+
+		resource.load
+		var sm : StateMachine
+		sm ?= resource.one
+		
+		result := sm
+	end
+
+	/**
+	 * Save the state machine passed by the first parameter into the XMI file which name is passed as second parameter. 
+	 */ 
+	operation saveModel(sm : StateMachine, fileName: String) is do
+		var repository : EMFRepository init EMFRepository.new
+ 		var resource : EMFResource 
+ 		resource ?= repository.createResource(fileName, "platform:/resource/StateMachine/metaModels/StateMachine.ecore")
+ 
+ 		resource.add(sm) 		 
+ 		resource.save
+	end
+
+	/**
+	* The main operation of this program interact with the user for getting a XMI file name and then print
+	* the state machine model stored in this file before executing it.
+	*/
+	operation main() : Void is do 
+		var sm : StateMachine
+		var fileName : String init "platform:/resource/StateMachine"
+		var dirName : String
+		var modelName : String
+		
+		dirName := stdio.read("Directory of the model? [default=models] ")
+		if (dirName == "") then dirName := "models" end	
+		modelName := stdio.read("Name of the model file? ")
+		fileName := fileName + "/" + dirName + "/" + modelName
+		
+		sm := loadModel(fileName)
+		stdio.writeln("\n === State machine loaded ===\n")
+		
+		printModel(sm)
+		
+	end
+}
