@@ -1,0 +1,260 @@
+-- @path MM=/StateMachine/metaModels/StateMachine.ecore
+
+module StateMachineFirstStep;
+create OUT : MM from IN : MM;
+
+---------- STATEMACHINE ----------
+
+rule duplicateStateMachine { 
+from
+	 sourceStateMachine : MM!StateMachine
+to
+	 targetStateMachine : MM!StateMachine(
+	 	 name <- sourceStateMachine.name.debug('nomStateMachine'),
+	 	 container <- sourceStateMachine.container,
+	 	 isActive <- true,
+	 	 operation <- sourceStateMachine.operation,
+	 	 states <- sourceStateMachine.states,
+	 	 initialState <- sourceStateMachine.initialState,
+	 	 transitions <- sourceStateMachine.transitions,
+	 	 events <- sourceStateMachine.events,
+	 	 variables <- sourceStateMachine.variables
+	 )
+} 
+
+
+---------- STATE ----------
+
+rule duplicateStateInitState { 
+from
+	 sourceState : MM!State (sourceState.oclIsTypeOf(MM!State) and sourceState.isInputStateOfContainer())
+to
+	 targetState : MM!State(
+	 	 name <- sourceState.name,
+	 	 container <- sourceState.container,
+	 	 isActive <- true,
+	 	 operation <- sourceState.operation
+	 )
+} 
+rule duplicateState { 
+from
+	 sourceState : MM!State (sourceState.oclIsTypeOf(MM!State) and not(sourceState.isInputStateOfContainer()))
+to
+	 targetState : MM!State(
+	 	 name <- sourceState.name,
+	 	 container <- sourceState.container,
+	 	 isActive <- false,
+	 	 operation <- sourceState.operation
+	 )
+} 
+
+---------- COMPOSITESTATE ----------
+
+rule duplicateCompositeStateActiv { 
+from
+	 sourceCompositeState : MM!CompositeState
+	 (sourceCompositeState.oclIsTypeOf(MM!CompositeState)
+	 	and sourceCompositeState.haveContainerActivate()
+		and sourceCompositeState.isInputCompositeStateOfContainer())
+to
+	 targetCompositeState : MM!CompositeState(
+	 	 name <- sourceCompositeState.name,
+	 	 container <- sourceCompositeState.container,
+	 	 isActive <- true,
+	 	 operation <- sourceCompositeState.operation,
+	 	 states <- sourceCompositeState.states,
+	 	 initialState <- sourceCompositeState.initialState
+	 )
+	 do{
+	 		targetCompositeState.debug('actif') ;
+	 }
+} 
+rule duplicateCompositeStateNotActiv { 
+from
+	 sourceCompositeState : MM!CompositeState
+	 (sourceCompositeState.oclIsTypeOf(MM!CompositeState)
+	 	and not(sourceCompositeState.isInputCompositeStateOfContainer())
+	 	)
+to
+	 targetCompositeState : MM!CompositeState(
+	 	 name <- sourceCompositeState.name,
+	 	 container <- sourceCompositeState.container,
+	 	 isActive <- false,
+	 	 operation <- sourceCompositeState.operation,
+	 	 states <- sourceCompositeState.states,
+	 	 initialState <- sourceCompositeState.initialState
+	 )
+	 do{
+	 		targetCompositeState.debug('inactif') ;
+	 }
+} 
+
+---------- INITIALSTATE ----------
+
+rule duplicateInitialState { 
+from
+	 sourceInitialState : MM!InitialState
+to
+	 targetInitialState : MM!InitialState(
+	 	 referencedState <- sourceInitialState.referencedState
+	 )
+} 
+
+
+---------- TRANSITION ----------
+
+rule duplicateTransition { 
+from
+	 sourceTransition : MM!Transition
+to
+	 targetTransition : MM!Transition(
+	 	 source <- sourceTransition.source,
+	 	 target <- sourceTransition.target,
+	 	 event <- sourceTransition.event,
+	 	 guard <- sourceTransition.guard
+	 )
+} 
+
+
+---------- EVENT ----------
+
+rule duplicateEvent { 
+from
+	 sourceEvent : MM!Event
+to
+	 targetEvent : MM!Event(
+	 	 name <- sourceEvent.name
+	 )
+} 
+
+
+---------- EXPRESSION ----------
+
+rule duplicateExpression { 
+from
+	 sourceExpression : MM!Expression
+to
+	 targetExpression : MM!Expression(
+	 	 left <- sourceExpression.left,
+	 	 right <- sourceExpression.right,
+	 	 operator <- sourceExpression.operator,
+	 	 _name <- sourceExpression._name
+	 )
+} 
+
+
+---------- BOOLEANDATA ----------
+
+rule duplicateBooleanData { 
+from
+	 sourceBooleanData : MM!BooleanData
+to
+	 targetBooleanData : MM!BooleanData(
+	 	 value <- sourceBooleanData.value
+	 )
+} 
+
+
+---------- INTEGERDATA ----------
+
+rule duplicateIntegerData { 
+from
+	 sourceIntegerData : MM!IntegerData
+to
+	 targetIntegerData : MM!IntegerData(
+	 	 value <- sourceIntegerData.value
+	 )
+} 
+
+
+---------- BOOLEANVARIABLE ----------
+
+rule duplicateBooleanVariable { 
+from
+	 sourceBooleanVariable : MM!BooleanVariable
+to
+	 targetBooleanVariable : MM!BooleanVariable(
+	 	 value <- sourceBooleanVariable.value,
+	 	 name <- sourceBooleanVariable.name
+	 )
+} 
+
+
+---------- INTEGERVARIABLE ----------
+
+rule duplicateIntegerVariable { 
+from
+	 sourceIntegerVariable : MM!IntegerVariable
+to
+	 targetIntegerVariable : MM!IntegerVariable(
+	 	 value <- sourceIntegerVariable.value,
+	 	 name <- sourceIntegerVariable.name
+	 )
+} 
+
+
+---------- OPERATION ----------
+
+rule duplicateOperation { 
+from
+	 sourceOperation : MM!Operation
+to
+	 targetOperation : MM!Operation(
+	 	 contents <- sourceOperation.contents
+	 )
+} 
+
+
+---------- ASSIGNMENT ----------
+
+rule duplicateAssignment { 
+from
+	 sourceAssignment : MM!Assignment
+to
+	 targetAssignment : MM!Assignment(
+	 	 expression <- sourceAssignment.expression,
+	 	 variable <- sourceAssignment.variable,
+	 	 _name <- sourceAssignment._name
+	 )
+} 
+
+
+---------- VARIABLEREFERENCE ----------
+
+rule duplicateVariableReference { 
+from
+	 sourceVariableReference : MM!VariableReference
+to
+	 targetVariableReference : MM!VariableReference(
+	 	 variable <- sourceVariableReference.variable,
+	 	 _name <- sourceVariableReference._name
+	 )
+} 
+helper context MM!State def: isEqual(s : MM!CompositeState) : Boolean = 
+	 	 if((self.name.debug('equal::nomSelf') = s.name.debug('equal::nomS')).debug('equal::nom')
+	 	 		and (self.isActive = s.isActive).debug('equal::isActive')
+				and (self.container = s.container).debug('equal::container')
+				and (self.operation = s.operation).debug('equal::operation\n ********'))
+	 	 then true else false endif ;
+
+helper context MM!State def: isInputStateOfContainer() : Boolean =
+	if(self.container.oclIsUndefined()) then false
+	else if(self.container.initialState.referencedState = self and self.container.oclIsTypeOf(MM!StateMachine)) then true else false
+		endif
+	endif
+	;
+
+helper context MM!CompositeState def: isInputCompositeStateOfContainer() : Boolean =
+	if(self.container.oclIsUndefined()) then false
+	else if((self.container.initialState.referencedState.isEqual(self)).debug('isInputCompositeStateOfContainer') and self.container.oclIsTypeOf(MM!StateMachine)) then true else false
+		endif
+	endif
+	;
+
+helper context MM!CompositeState def: haveContainerActivate() : Boolean =
+	if(self.container.oclIsUndefined()) then false else self.stateIsActive()
+	endif;
+
+helper context MM!CompositeState def: stateIsActive() : Boolean =
+	if(self.container.oclIsTypeOf(MM!StateMachine).debug('isActive')) then true else false
+	endif;

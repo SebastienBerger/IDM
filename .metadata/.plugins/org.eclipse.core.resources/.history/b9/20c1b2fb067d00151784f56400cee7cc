@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SimplStateMachine:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:SimplStateMachine="platform:/resource/StateMachine/metaModels/StateMachine.ecore" name="Feu Tricolore">
+  <states name="Rouge"/>
+  <states name="Vert"/>
+  <states name="Jaune"/>
+  <initialState referencedState="//@states.0"/>
+  <transitions source="//@states.2" target="//@states.0" event="//@events.0"/>
+  <transitions source="//@states.0" target="//@states.1" event="//@events.1"/>
+  <transitions source="//@states.1" target="//@states.2" event="//@events.2"/>
+  <events name="passeRouge"/>
+  <events name="passeVert"/>
+  <events name="passeJaune"/>
+</SimplStateMachine:StateMachine>

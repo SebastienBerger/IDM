@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimplStateMachine="platform:/resource/StateMachine/metaModels/StateMachine.ecore">
+  <SimplStateMachine:StateMachine name="Voiture" isActive="true">
+    <states name="Arret" isActive="true">
+      <operation>
+        <contents variable="/0/@variables.0" _name="vitesse := 0">
+          <expression xsi:type="SimplStateMachine:IntegerData"/>
+        </contents>
+      </operation>
+    </states>
+    <initialState referencedState="/0/@states.0"/>
+    <transitions source="/0/@states.0" event="/0/@events.1"/>
+    <transitions target="/0/@states.0" event="/0/@events.0">
+      <guard operator="eq" _name="vitesse = 10">
+        <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+        <right xsi:type="SimplStateMachine:IntegerData" value="10"/>
+      </guard>
+    </transitions>
+    <transitions target="/2" event="/0/@events.1">
+      <guard operator="and" _name="vitesse >= 10 and vitesse &lt; 90">
+        <left xsi:type="SimplStateMachine:Expression" operator="gte" _name="vitesse >= 10">
+          <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+          <right xsi:type="SimplStateMachine:IntegerData" value="10"/>
+        </left>
+        <right xsi:type="SimplStateMachine:Expression" operator="lt" _name="vitesse &lt; 90">
+          <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+          <right xsi:type="SimplStateMachine:IntegerData" value="90"/>
+        </right>
+      </guard>
+    </transitions>
+    <transitions target="/3" event="/0/@events.1">
+      <guard operator="eq" _name="vitesse = 90">
+        <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+        <right xsi:type="SimplStateMachine:IntegerData" value="90"/>
+      </guard>
+    </transitions>
+    <transitions target="/1" event="/0/@events.0">
+      <guard operator="neq" _name="vitesse &lt;> 10">
+        <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+        <right xsi:type="SimplStateMachine:IntegerData" value="10"/>
+      </guard>
+    </transitions>
+    <events name="ralentir"/>
+    <events name="accelerer"/>
+    <variables xsi:type="SimplStateMachine:IntegerVariable" name="vitesse"/>
+    <variables xsi:type="SimplStateMachine:BooleanVariable" name="maxAtteint">
+      <value xsi:type="SimplStateMachine:BooleanData"/>
+    </variables>
+  </SimplStateMachine:StateMachine>
+  <SimplStateMachine:State name="MoinsVite">
+    <operation>
+      <contents variable="/0/@variables.0" _name="vitesse -=10">
+        <expression xsi:type="SimplStateMachine:Expression" operator="sub" _name="-">
+          <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+          <right xsi:type="SimplStateMachine:IntegerData" value="10"/>
+        </expression>
+      </contents>
+    </operation>
+  </SimplStateMachine:State>
+  <SimplStateMachine:State name="PlusVite">
+    <operation>
+      <contents variable="/0/@variables.0" _name="vitesse += 10">
+        <expression xsi:type="SimplStateMachine:Expression" _name="+">
+          <left xsi:type="SimplStateMachine:VariableReference" variable="/0/@variables.0" _name="vitesse"/>
+          <right xsi:type="SimplStateMachine:IntegerData" value="10"/>
+        </expression>
+      </contents>
+    </operation>
+  </SimplStateMachine:State>
+  <SimplStateMachine:State name="Maximum">
+    <operation>
+      <contents variable="/0/@variables.0" _name="vitesse := 100">
+        <expression xsi:type="SimplStateMachine:IntegerData" value="100"/>
+      </contents>
+      <contents variable="/0/@variables.1" _name="maxAtteint := true">
+        <expression xsi:type="SimplStateMachine:BooleanData" value="true"/>
+      </contents>
+    </operation>
+  </SimplStateMachine:State>
+  <SimplStateMachine:InitialState referencedState="/2"/>
+</xmi:XMI>

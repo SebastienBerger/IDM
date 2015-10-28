@@ -1,0 +1,5 @@
+-- @path MM=/StateMachine/metaModels/StateMachine.ecore
+
+module StateMachineFirstStep;
+create OUT : MM from IN : MM;
+

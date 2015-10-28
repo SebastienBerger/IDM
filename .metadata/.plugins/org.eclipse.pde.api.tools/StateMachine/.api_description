@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="StateMachine" modificationStamp="2373" version="1.2">
+    <package visibility="1">
+        <fragment handle="=StateMachine/src&lt;SimplStateMachine.util"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=StateMachine/src&lt;SimplStateMachine.impl"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{BooleanVariableImpl.java[BooleanVariableImpl" modificationStamp="2421" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{StateMachineImpl.java[StateMachineImpl" modificationStamp="2397" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{IntegerDataImpl.java[IntegerDataImpl" modificationStamp="2417" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{IntegerVariableImpl.java[IntegerVariableImpl" modificationStamp="2423" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{CompositeStateImpl.java[CompositeStateImpl" modificationStamp="2401" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{DataImpl.java[DataImpl" modificationStamp="2413" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{ExpressionImpl.java[ExpressionImpl" modificationStamp="2411" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{VariableReferenceImpl.java[VariableReferenceImpl" modificationStamp="2429" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{StateImpl.java[StateImpl" modificationStamp="2399" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{BooleanDataImpl.java[BooleanDataImpl" modificationStamp="2415" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{VariableImpl.java[VariableImpl" modificationStamp="2419" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine.impl{ExpressionElementImpl.java[ExpressionElementImpl" modificationStamp="2409" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=StateMachine/src&lt;SimplStateMachine"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Data.java[Data" modificationStamp="2412" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{ExpressionElement.java[ExpressionElement" modificationStamp="2408" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Transition.java[Transition" modificationStamp="2404" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Event.java[Event" modificationStamp="2406" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Expression.java[Expression" modificationStamp="2410" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{IntegerData.java[IntegerData" modificationStamp="2416" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{State.java[State" modificationStamp="2398" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{IntegerVariable.java[IntegerVariable" modificationStamp="2422" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Variable.java[Variable" modificationStamp="2418" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{BooleanVariable.java[BooleanVariable" modificationStamp="2420" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Assignment.java[Assignment" modificationStamp="2426" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Operation.java[Operation" modificationStamp="2424" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{SimplStateMachinePackage.java[SimplStateMachinePackage" modificationStamp="2387" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{CompositeState.java[CompositeState" modificationStamp="2400" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{InitialState.java[InitialState" modificationStamp="2402" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{StateMachine.java[StateMachine" modificationStamp="2396" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{BooleanData.java[BooleanData" modificationStamp="2414" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{SimplStateMachineFactory.java[SimplStateMachineFactory" modificationStamp="2390" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{VariableReference.java[VariableReference" modificationStamp="2428" restrictions="0" visibility="0"/>
+        <type handle="=StateMachine/src&lt;SimplStateMachine{Operator.java[Operator" modificationStamp="2430" restrictions="0" visibility="0"/>
+    </package>
+</component>
