@@ -230,7 +230,12 @@ to
 	 	 _name <- sourceVariableReference._name
 	 )
 } 
-
+--helper context MM!State def: isEqual(s : MM!CompositeState) : Boolean = 
+--	 	 if((self.name.debug('equal::nomSelf') = s.name.debug('equal::nomS')).debug('equal::nom')
+--	 	 		and (self.isActive = s.isActive).debug('equal::isActive')
+--				and (self.container = s.container).debug('equal::container')
+--				and (self.operation = s.operation).debug('equal::operation\n ********'))
+--	 	 then true else false endif ;
 
 helper context MM!State def: isInputStateOfContainer() : Boolean =
 	if(self.container.oclIsUndefined()) then false
